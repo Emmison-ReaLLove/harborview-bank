@@ -800,6 +800,51 @@
     </div>
   </div>
 </section>
+<section class="trust-badges">
+  <div class="container">
+    <h4 class="trust-heading">Your Security is Our Priority</h4>
+    <div class="badges-row">
+
+      <!-- SSL Secure Badge -->
+      <div class="badge">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L4 7v7c0 5 4 9 8 9s8-4 8-9V7l-8-5z" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M8 12h8M8 16h8M10 8h4" stroke="#1a1a1a" stroke-width="2"/>
+        </svg>
+        <p>256-bit SSL Encryption</p>
+      </div>
+
+      <!-- FDIC Insured Badge -->
+      <div class="badge">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M8 12l2 2 4-4" stroke="#1a1a1a" stroke-width="2"/>
+        </svg>
+        <p>FDIC Insured</p>
+      </div>
+
+      <!-- Data Privacy Badge -->
+      <div class="badge">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7v7c0 5 4 9 10 9s10-4 10-9V7l-10-5z" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M8 12h8" stroke="#1a1a1a" stroke-width="2"/>
+        </svg>
+        <p>GDPR Compliant</p>
+      </div>
+
+      <!-- Verified Payments Badge -->
+      <div class="badge">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M7 12l3 3 7-7" stroke="#1a1a1a" stroke-width="2"/>
+        </svg>
+        <p>Verified Payments</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
             <footer class="site-footer">
   <div class="container">
@@ -855,6 +900,52 @@
 
             <style>
 /* ✅ Add to your CSS file */
+.trust-badges {
+  background: #f7f9fc;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.trust-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #102a43;
+  margin-bottom: 40px;
+}
+
+.badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 160px;
+}
+
+.badge svg {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.badge p {
+  font-size: 14px;
+  color: #4a4a4a;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .badges-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
 .slogan-area {
   background: url('assets/images/backgrounds/blue-curve-frame-template_53876-114605.avif') no-repeat center center fixed;
   background-size: cover;
@@ -1017,7 +1108,7 @@
                 <i class="fas fa-plus"></i>
             </span>
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image">
+                <a style="text-decoration: none;" href="index.html" aria-label="logo image">
                    <img src="assets/images/resources/logo-003.png" style="width:70px;height:60px;position: relative;top: 30px;"alt="H-V-B Logo" title="">
                    <span class="mobile-bank-name">HARBORVIEW BANK</span>
                 </a>
