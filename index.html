@@ -700,41 +700,25 @@
   line-height: 1.6;
 }
 
-</style>
-        
-        
-        
+</style> 
 
-        <!--Start slogan area-->
-        <section class="slogan-area">
-            <div class="container">
-                <div class="slogan-content-box">
-                    <div class="slogan-content-box-bg"
-                        style="background-image: url(assets/images/backgrounds/slogan-content-box-bg.jpg);"></div>
-                    <div class="inner-title">
-                        <h2 style="font-size: 30px;font-weight:bold;font-family:'Times New Roman', Times, serif">Experience a New Digital World.</h2>
-                        <p style="font-family:'Times New Roman', Times, serif">Mobile banking application with new & exRS-IBng features.</p>
-                    </div>
-                    <div style="text-align:center;width:200px">
-                        <a href="https://play.google.com/store/apps/details?id=your.package.name">
-                            <img src="assets\images\icon\en_badge_web_generic.png" style="height:80px;width:160px" alt="Get it on Google Play">
-                        </a>
-                    </div>
-                    <div style="text-align:center;width:200px">
-                        <a href="https://apps.apple.com/app/your-app-name/id123456789">
-                            <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" style="height:50px" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <style>
-                .slogan-area{
-                        background: url('assets/images/backgrounds/blue-curve-frame-template_53876-114605.avif') no-repeat center center fixed;
-                        background-size: cover;
-                }
-            </style>
-        </section>
-        <!--End slogan area-->
+      <!-- ✅ Compact Slogan Area -->
+<section class="slogan-area">
+  <div class="container">
+    <div class="slogan-content-box">
+      <h2>Experience a New Digital World.</h2>
+      <p>Mobile banking application with new & exciting features.</p>
+      <div class="badges">
+        <a href="https://play.google.com/store/apps/details?id=your.package.name">
+          <img src="assets/images/icon/en_badge_web_generic.png" alt="Get it on Google Play">
+        </a>
+        <a href="https://apps.apple.com/app/your-app-name/id123456789">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
             <footer>
                 <div class="container">
@@ -751,6 +735,36 @@
                 </div>
             </footer>
             <style>
+/* ✅ Add to your CSS file */
+.slogan-area {
+  background: url('assets/images/backgrounds/blue-curve-frame-template_53876-114605.avif') no-repeat center center fixed;
+  background-size: cover;
+  padding: 40px 20px; /* Reduced padding */
+  text-align: center;
+}
+
+.slogan-content-box h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.slogan-content-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.slogan-content-box .badges {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.slogan-content-box .badges img {
+  height: 50px; /* Smaller badges */
+  width: auto;
+}
 
                 
                 footer {
