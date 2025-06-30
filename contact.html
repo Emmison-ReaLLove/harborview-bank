@@ -357,31 +357,29 @@
         <!--End Main Contact Form Area-->
 
         <!--Google Map Start-->
-        <section class="google-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.144535208136!2d-81.38500212448445!3d19.286932484839347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f8c24b712299e21%3A0xaac5161bc15650f1!2sGeorge%20Town%2C%20Cayman%20Islands!5e0!3m2!1sen!2sgh!4v1715587196647!5m2!1sen!2sgh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <section class="google-map-section">
+  <div class="container">
+    <div class="google-map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.144535208136!2d-81.38500212448445!3d19.286932484839347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f8c24b712299e21%3A0xaac5161bc15650f1!2sGeorge%20Town%2C%20Cayman%20Islands!5e0!3m2!1sen!2sgh!4v1715587196647!5m2!1sen!2sgh"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
 
-            <div class="google-map-content-box" style="height:30px">
-                <div style="padding-left: 50%;position: relative;left:-20px;width: 300px;" class="branch-atm-tab">
-                    <!--Start Branch Atm Tab Buttom-->
-                    <div class="branch-atm-tab__button" >
-                        <ul class="tabs-button-box" style="height:40px">
-                            <li data-tab="#branch" class="tab-btn-item active-btn-item">
-                                <h5>Branch</h5>
-                            </li>
-                            <li data-tab="#atm" class="tab-btn-item">
-                                <h5>atm</h5>
-                            </li>
-                        </ul>
-                        
-                    </div>
-                    <!--End Branch Atm Tab Buttom-->
-
-                    
-                </div>
-            </div>
-
-        </section>
-        <!--Google Map End-->
+    <div class="branch-atm-tab">
+      <ul class="tabs-button-box">
+        <li data-tab="#branch" class="tab-btn-item active-btn-item">
+          <h5>Branch</h5>
+        </li>
+        <li data-tab="#atm" class="tab-btn-item">
+          <h5>ATM</h5>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
         <!--Start Customer Care Numbers Area-->
         <section class="customer-care-numbers-area" id="customer-service">
@@ -675,29 +673,62 @@
 }
 
 /* Google Map Styles */
-.google-map {
-    position: relative;
-    padding: 60px 0;
-    align-self: center;
+.google-map-section {
+  padding: 40px 0;
 }
 
-.google-map iframe {
-    width: 97%;
-    border: none;
-    border-radius: 10px;
-    align-self: center;
+.google-map-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.google-map-content-box {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background:inherit;
-    padding: 25px;
-    border-radius: 10px;
-    align-self: center;
+.google-map-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
+
+.branch-atm-tab {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.tabs-button-box {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.tabs-button-box li {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 2px solid #f88119;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.tabs-button-box li.active-btn-item {
+  background: #f88119;
+  color: #fff;
+}
+
+.tabs-button-box li h5 {
+  margin: 0;
+}
+
+.tabs-button-box li:hover {
+  background: #f88119;
+  color: #fff;
+}
+
 
 /* Customer Care Numbers Area */
 .customer-care-numbers-area {
