@@ -224,58 +224,54 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-xl-6">
-                        <div class="contact-info-box-style1">
-                            <div class="box1"></div>
-                            <div class="title">
-                                <h2>Get Support for<br> any Queries or Complaints</h2>
-                                <p>Committed to helping you meet all your banking needs.</p>
-                            </div>
+<div class="col-xl-6 col-lg-6 col-md-12">
+  <div class="contact-info-box">
+    <div class="info-header">
+      <h2>Get Support for<br> Any Queries or Complaints</h2>
+      <p>Committed to helping you meet all your banking needs.</p>
+    </div>
 
-                            <ul class="contact-info-1" style="width:300px;background-color:inherit">
-                                <li>
-                                    <div class="icon">
-                                        <i class="fas fa-building"></i>
-                                        </div>
-                                    <div class="text">
-                                        <p>Corporate Office</p>
-                                        <h3>George Town, <br>Grand Cayman</h3>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fas fa-clock"></i>
-                                        </div>
-                                    <div class="text">
-                                        <p>Office Hours</p>
-                                        <h3>Mon - Fri: 9.00am to 5.00pm</h3>
-                                        <span>[2nd Sat Holiday]</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fas fa-bell"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Front Desk</p>
-                                        <h3>                <a href="tel:+44 (0) 003000000">+44 (0) 003000000</a>
-                                        </h3>
-                                        <h3><a href="mailto:info@harborviewbank.com">info@harborviewbank.com</a></h3>
-                                    </div>
-                                </li>
-                            </ul>
+    <ul class="contact-info-list">
+      <li>
+        <div class="icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="info-text">
+          <p>Corporate Office</p>
+          <h3>George Town,<br> Grand Cayman</h3>
+        </div>
+      </li>
 
-                            <div class="bottom-box">
-                                <div class="btn-box">
-                                    <a><i class="fas fa-arrow-down"></i> <button style="background-color: inherit;" onclick="document.getElementById('customer-service').scrollIntoView({ behavior: 'smooth' });">
-                                        Customer Care
-                                      </button></a>
-                                </div>
-                                
-                            </div>
+      <li>
+        <div class="icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="info-text">
+          <p>Office Hours</p>
+          <h3>Mon - Fri: 9.00am - 5.00pm</h3>
+          <span>[2nd Sat Holiday]</span>
+        </div>
+      </li>
 
-                        </div>
-                    </div>
+      <li>
+        <div class="icon">
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="info-text">
+          <p>Front Desk</p>
+          <h3><a href="tel:+44 (0) 003000000">+44 (0) 003000000</a></h3>
+          <h3><a href="mailto:info@harborviewbank.com">info@harborviewbank.com</a></h3>
+        </div>
+      </li>
+    </ul>
+
+    <div class="contact-cta">
+      <button class="cta-btn" onclick="document.getElementById('customer-service').scrollIntoView({ behavior: 'smooth' });">
+        <i class="fas fa-arrow-down"></i> Customer Care
+      </button>
+    </div>
+  </div>
+</div>
 
 
                     <div class="col-xl-6">
@@ -546,71 +542,80 @@
     background-color: #ffffff;
 }
 
-.contact-info-box-style1 {
-    background: linear-gradient(135deg, #ffffff, #e3e3e3);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+.contact-info-box {
+  background: inherit;
+  padding: 30px;
+  border-radius: 10px;
 }
 
-.contact-info-box-style1 .title h2 {
-    font-size: 2.2em;
-    color: #333;
-    margin-bottom: 15px;
+.info-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.contact-info-box-style1 .title p {
-    font-size: 1.2em;
-    color: #666;
+.info-header p {
+  margin-bottom: 30px;
+  color: #555;
 }
 
-.contact-info-box-style1 ul {
-    list-style: none;
-    padding: 0;
+.contact-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
 }
 
-.contact-info-box-style1 ul li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 25px;
+.contact-info-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
 
-.contact-info-box-style1 ul li .icon {
-    font-size: 1.8em;
-    color: #ff9a02;
-    margin-right: 15px;
+.contact-info-list .icon {
+  font-size: 24px;
+  color: #f88119;
+  margin-right: 15px;
 }
 
-.contact-info-box-style1 ul li .text {
-    flex: 1;
+.contact-info-list .info-text p {
+  margin: 0;
+  font-weight: 600;
 }
 
-.contact-info-box-style1 ul li .text p {
-    font-weight: bold;
-    color: #333;
-    margin: 0;
+.contact-info-list .info-text h3 {
+  margin: 5px 0;
+  font-size: 18px;
 }
 
-.contact-info-box-style1 ul li .text h3 {
-    margin: 5px 0 0;
-    font-size: 1.1em;
-    color: #666;
+.contact-info-list .info-text span {
+  display: block;
+  font-size: 14px;
+  color: #777;
 }
 
-.contact-info-box-style1 .bottom-box .btn-box a {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #ff9a02;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: background 0.3s, transform 0.3s;
+.contact-cta {
+  text-align: left;
 }
 
-.contact-info-box-style1 .bottom-box .btn-box a:hover {
-    background: #ff9a02;
-    transform: translateY(-3px);
+.contact-cta .cta-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #f88119;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-cta .cta-btn i {
+  margin-right: 8px;
+}
+
+.contact-cta .cta-btn:hover {
+  background: #d76c0d;
 }
 
 /* Contact Form Styles */
