@@ -1,411 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Account Login | Harborview Bank</title>
-<meta name="description" content="Secure login for Harborview Bank customers. Access your online banking account and manage your finances safely.">
-        <!-- Favicons Icons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-        <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-        <!-- fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-            rel="stylesheet">
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
-            rel="stylesheet">
-    
-        <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
-        <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
-        <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
-        <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-        <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
-        <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
-        <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
-        <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
-        <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
-        <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
-        <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
-        <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
-        <link rel="stylesheet" href="assets/vendors/thm-icons/style.css">
-        <link rel="stylesheet" href="assets/vendors/language-switcher/polyglot-language-switcher.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="styles.css">
-        <!-- Module css -->
-        <link rel="stylesheet" href="assets/css/module-css/01-header-section.css">
-        <link rel="stylesheet" href="assets/css/module-css/02-banner-section.css">
-        <link rel="stylesheet" href="assets/css/module-css/03-about-section.css">
-        <link rel="stylesheet" href="assets/css/module-css/04-fact-counter-section.css">
-        <link rel="stylesheet" href="assets/css/module-css/05-testimonial-section.css">
-        <link rel="stylesheet" href="assets/css/module-css/06-partner-section.css">
-        <link rel="stylesheet" href="assets/css/module-css/07-footer-section.css">
-        <link rel="stylesheet" href="assets/css/module-css/08-blog-section.css">
-    
-        <!-- Template styles -->
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="assets/css/responsive.css" />
-    
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-size: cover;
-        background-repeat: no-repeat;
-        overflow: hidden;
-    }
-</style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Harborview Bank</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+      /* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+  background: url('https://www.freepik.com/free-ai-image/cyber-security-concept-digital-art_236289582.htm#fromView=search&page=2&position=35&uuid=3d17e31e-49de-43c1-bb53-592efd3b1f46&query=orange+bank+security+login+background') center/cover no-repeat;
+  position: relative;
+  height: 100%;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.login-card {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.login-card .logo img {
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+.login-card h2 {
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.input-group input::placeholder {
+  color: #ddd;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.options a {
+  color: #f88119;
+  text-decoration: none;
+}
+
+.error-message {
+  color: #ff4d4d;
+  margin-bottom: 15px;
+  min-height: 20px;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff9900, #ff6600);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+  </style>
 </head>
-<body class="zoom-effect">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-            html, body {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    place-items: center;
-    background-image: url("assets/images/resources/logo-003.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-   
-    ::selection {
-        background: #f88119;
-        color: #fff;
-    }
-    .wrapper {
-        overflow: hidden;
-        max-width: 500px;
-        height: 550px;
-        background: inherit;
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-    }
-    .wrapper .title-text {
-        display: flex;
-        width: 200%;
-    }
-    .wrapper .title {
-        width: 50%;
-        font-size: 35px;
-        font-weight: 600;
-        text-align: center;
-        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-    .wrapper .slide-controls {
-        position: relative;
-        display: flex;
-        height: 50px;
-        width: 100%;
-        overflow: hidden;
-        margin: 30px 0 10px 0;
-        justify-content: space-between;
-        border: 1px solid lightgrey;
-        border-radius: 15px;
-    }
-    .slide-controls .slide {
-        height: 100%;
-        width: 100%;
-        color: #fff;
-        font-size: 18px;
-        font-weight: 500;
-        text-align: center;
-        line-height: 48px;
-        cursor: pointer;
-        z-index: 1;
-        transition: all 0.6s ease;
-    }
-    .slide-controls label.signup {
-        color: #000;
-    }
-    .slide-controls .slider-tab {
-        position: absolute;
-        height: 100%;
-        width: 50%;
-        left: 0;
-        z-index: 0;
-        border-radius: 15px;
-        background: -webkit-linear-gradient(left, #ff9900, #ff9933, #ff6600, #ff3300);
-        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-    input[type="radio"] {
-        display: none;
-    }
-    #signup:checked ~ .slider-tab {
-        left: 50%;
-    }
-    #signup:checked ~ label.signup {
-        color: #fff;
-        cursor: default;
-        user-select: none;
-    }
-    #signup:checked ~ label.login {
-        color: #000;
-    }
-    #login:checked ~ label.signup {
-        color: #000;
-    }
-    #login:checked ~ label.login {
-        cursor: default;
-        user-select: none;
-    }
-    .wrapper .form-container {
-        width: 100%;
-        overflow: hidden;
-    }
-    .form-container .form-inner {
-        display: flex;
-        width: 200%;
-    }
-    .form-container .form-inner form {
-        width: 50%;
-        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-    .form-inner form .field {
-        height: 50px;
-        width: 100%;
-        margin-top: 20px;
-    }
-    .form-inner form .field input {
-        height: 100%;
-        width: 100%;
-        outline: none;
-        padding-left: 15px;
-        border-radius: 15px;
-        border: 1px solid lightgrey;
-        border-bottom-width: 2px;
-        font-size: 17px;
-        transition: all 0.3s ease;
-    }
-    .form-inner form .field input:focus {
-        border-color: #fb8a1a;
-    }
-    .form-inner form .field input::placeholder {
-        color: #999;
-        transition: all 0.3s ease;
-    }
-    form .field input:focus::placeholder {
-        color: #f79721;
-    }
-    .form-inner form .pass-link {
-        margin-top: 5px;
-    }
-    .form-inner form .signup-link {
-        text-align: center;
-        margin-top: 30px;
-    }
-    .form-inner form .pass-link a,
-    .form-inner form .signup-link a {
-        color: #1c65f8;
-        text-decoration: none;
-    }
-    .form-inner form .pass-link a:hover,
-    .form-inner form .signup-link a:hover {
-        text-decoration: underline;
-    }
-    form .btn {
-        height: 50px;
-        width: 100%;
-        border-radius: 15px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    form .btn .btn-layer {
-    height: 100%;
-    width: 300%;
-    position: absolute;
-    left: -100%;
-    background: -webkit-linear-gradient(right, #ff9900, #ff9933, #ff6600, #ff3300); /* Orange Gradient */
-    background: linear-gradient(to right, #ff9900, #ff9933, #ff6600, #ff3300); /* Non-webkit browsers */
-    border-radius: 15px;
-    transition: all 0.4s ease;
-}
-
-form .btn:hover .btn-layer {
-    left: 0;
-}
-
-form .btn input[type="submit"] {
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    position: relative;
-    background: none;
-    border: none;
-    color: #fff;
-    padding-left: 0;
-    border-radius: 15px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-}
-.container span {
-    position: absolute;
-    left: 0;
-    width: 32px;
-    height: 6px;
-    background: #2c4766;
-    border-radius: 8px;
-    transform-origin: 128px;
-    transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
-    animation: animateBlink 3s linear infinite;
-    animation-delay: calc(var(--i) * (3s / 50));
-}
-@keyframes animateBlink {
-    0% {
-        background: #0ef;
-    }
-    25% {
-        background: #2c4766;
-    }
-}
-.header {
-    font-weight: bold;
-    font-size: 50px;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    position: relative;
-    top: 50px;
-    animation: fadeInBounce 2s ease-in-out;
-}
-@keyframes fadeInBounce {
-    0% {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-    50% {
-        opacity: 0.5;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }}
-
-</style>
-<div class="container">
-<div class="wrapper" style="position: relative;top:-10px">
-    <div class="title-text" >
-        <div class="title login">Login Form</div>
-        <div class="title signup">Signup Form</div>
-    </div>
-    <div class="form-container">
-        <div class="slide-controls">
-            <input type="radio" name="slide" id="login" checked>
-            <input type="radio" name="slide" id="signup">
-            <label for="login" class="slide login">Login</label>
-            <label for="signup" class="slide signup">Account</label>
-            <div class="slider-tab"></div>
+<body>
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="login-card">
+      <div class="logo">
+        <img src="assets/images/resources/logo-003.png" alt="Harborview Bank">
+      </div>
+      <h2>Sign In to Your Account</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Username" required>
         </div>
-        <div class="form-inner">
-            <form action="#" class="login">
-                <div class="field error-message" id="error-message" style="display: none;"></div> 
-                <div class="field">
-                    <input type="text" placeholder="Username" required>
-                </div>
-                <div class="field">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <div class="pass-link"><a href="#">Forgot password?</a></div>
-                <div class="field btn">
-                    <div class="btn-layer"></div>
-                    <input type="submit" value="Login">
-                </div>
-                <div class="signup-link">Not a member? <a href="register.html">Signup now</a></div>
-            </form>
-           
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password" required>
         </div>
+        <div class="options">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <div class="error-message" id="error-message"></div>
+        <button type="submit" class="btn">Login</button>
+        <p class="signup-link">Not a member? <a href="register.html">Create an account</a></p>
+      </form>
     </div>
+  </div>
 
-<script>
-   document.addEventListener("DOMContentLoaded", function() {
-const loginForm = document.querySelector("form.login");
-const errorMessage = document.getElementById("error-message");
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("loginForm");
+  const errorMessage = document.getElementById("error-message");
 
-loginForm.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
-    
-    // Retrieve username and password from form inputs
-    const username = loginForm.querySelector('input[type="text"]').value;
-    const password = loginForm.querySelector('input[type="password"]').value;
-    
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    // Check if username and password are correct (for demonstration purposes)
+    const username = form.querySelector('input[type="text"]').value;
+    const password = form.querySelector('input[type="password"]').value;
+
     if (username === "Stacy Garner" && password === "Stacy@69") {
-        // Redirect to fatima-open-account.html
-        window.location.href = "gdhxgccvgf5fxcv234-stacy-garner-account-open.html";
+      window.location.href = "gdhxgccvgf5fxcv234-stacy-garner-account-open.html";
     } else {
-        // Replace with actual error handling if credentials are incorrect
-        errorMessage.style.display = "block";
-        errorMessage.style.height = "1px";
-        errorMessage.textContent = "Invalid username or password";
-        errorMessage.style.color = "red";
+      errorMessage.textContent = "Invalid username or password.";
     }
+  });
 });
-
-// Other existing JavaScript code for UI functionality remains unchanged
-const loginText = document.querySelector(".title-text");
-const loginBtn = document.querySelector(".login");
-
-
-signupBtn.onclick = () => {
-    loginForm.style.marginLeft = "-50%";
-    loginText.style.marginLeft = "-50%";
-};
-loginBtn.onclick = () => {
-    loginForm.style.marginLeft = "0%";
-    loginText.style.marginLeft = "0%";
-};
-
-signupLink.onclick = () => {
-    signupBtn.click();
-    return false;
-};
-});
-    
-</script>
-<script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
-<script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
-<script src="assets/vendors/circleType/jquery.circleType.js"></script>
-<script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
-<script src="assets/vendors/isotope/isotope.js"></script>
-<script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-<script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-<script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="assets/vendors/jquery-migrate/jquery-migrate.min.js"></script>
-<script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
-<script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-<script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
-<script src="assets/vendors/odometer/odometer.min.js"></script>
-<script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
-<script src="assets/vendors/swiper/swiper.min.js"></script>
-<script src="assets/vendors/vegas/vegas.min.js"></script>
-<script src="assets/vendors/wnumb/wNumb.min.js"></script>
-<script src="assets/vendors/wow/wow.js"></script>
-<script src="assets/vendors/extra-scripts/jquery.paroller.min.js"></script>
-<script src="assets/vendors/language-switcher/jquery.polyglot.language.switcher.js"></script>
-
-<!-- Template js -->
-<script src="assets/js/custom.js"></script>
-
+  </script>
 </body>
 </html>
