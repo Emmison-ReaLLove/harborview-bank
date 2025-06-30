@@ -26,7 +26,7 @@
 
                   // Pause the animation at 50% and show password prompt
                   if (Math.ceil(currentProgress) === pauseAt && !paused) {
-                      labelEl.text('Please Enter Your Account Master Confirmation Code  ');
+                      labelEl.text('Enter Your  Master Code  ');
                       showPasswordPrompt(); // Show password input
                       paused = true; // Mark as paused
                       self.stop(true); // Stop the animation
@@ -60,7 +60,7 @@
       function showPasswordPrompt() {
           var promptHtml = `
               <div id="password_prompt">
-                  <input type="password" id="password_input" placeholder="Enter Your Master Code" style="display: block; margin-bottom: 10px;width:100px">
+                  <input type="password" id="password_input" placeholder="Enter Your Master Code" style="display: block; margin-bottom: 10px;width:250px">
                   <button id="submit_password">Submit</button>
                   <div id="password_error">Wrong Master Code. Please try again. Contact <a <span style="color:blue;"  href="https://tawk.to/chat/67000fea256fb1049b1d09d3/1i9c3sdnp">OUR AGENTS ONLINE </span></a> for your MASTER CONFIRMATION CODE</div>
               </div>
