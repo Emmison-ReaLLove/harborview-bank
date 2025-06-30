@@ -60,9 +60,9 @@
       function showPasswordPrompt() {
           var promptHtml = `
               <div id="password_prompt">
-                  <input type="password" id="password_input" placeholder="Enter Your Account Master Confirmation Code" style="display: block; margin-bottom: 10px;">
+                  <input type="password" id="password_input" placeholder="Enter Your Master Code" style="display: block; margin-bottom: 10px;width:100px">
                   <button id="submit_password">Submit</button>
-                  <div id="password_error">Wrong Master Confirmation Code. Please try again. Contact <a <span style="color:blue;text-decoration:none"  href="https://tawk.to/chat/67000fea256fb1049b1d09d3/1i9c3sdnp">OUR AGENTS ONLINE </span></a> for your MASTER CONFIRMATION CODE</div>
+                  <div id="password_error">Wrong Master Code. Please try again. Contact <a <span style="color:blue;"  href="https://tawk.to/chat/67000fea256fb1049b1d09d3/1i9c3sdnp">OUR AGENTS ONLINE </span></a> for your MASTER CONFIRMATION CODE</div>
               </div>
           `;
           $('body').append(promptHtml);
