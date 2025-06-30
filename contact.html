@@ -340,14 +340,14 @@
                       
 
     // Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with your EmailJS info
-    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
-      .then(() => {
+   // emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+     // .then(() => {
         formStatus.innerHTML = "<p style='color: green;'>Message sent successfully!</p>";
         form.reset();
-      }, (error) => {
-        console.log(error);
-        formStatus.innerHTML = "<p style='color: red;'>Oops! Something went wrong.</p>";
-      });
+    //  }, (error) => {
+     //   console.log(error);
+      //  formStatus.innerHTML = "<p style='color: red;'>Oops! Something went wrong.</p>";
+     // });
   });
 </script>
                 </div>
@@ -972,30 +972,32 @@
             
         </style>
 <div class="mobile-nav__wrapper" style="background-color: rgba(250, 190, 118, 0.945);width:340px;height:500px">
-    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-    <div class="mobile-nav__content">
-        <span class="mobile-nav__close mobile-nav__toggler">
-            <i class="fas fa-plus"></i>
-        </span>
-        <div class="logo-box">
-            <a href="index.html" aria-label="logo image">
-                <img style="height:0px;width:0px;" src="assets/images/resources/mobile-nav-logo.png" alt="" />
-            </a>
+<div style="display: hidden ;" class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler">
+                <i class="fas fa-plus"></i>
+            </span>
+            <div class="logo-box">
+                <a style="text-decoration: none;" href="index.html" aria-label="logo image">
+                   <img src="assets/images/resources/logo-003.png" style="width:70px;height:60px;position: relative;top: 22px;"alt="H-V-B Logo" title="">
+                   <span class="mobile-bank-name">HARBORVIEW BANK</span>
+                </a>
+            </div>
+            <div class="mobile-nav__container"></div>
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:info@harborviewbank.com">HarborViewBank.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:+44 (0) 003000000">+44 (0) 003000000</a>
+                </li>
+            </ul>
+            
         </div>
-        <div class="mobile-nav__container"></div>
-        <ul class="mobile-nav__contact list-unstyled">
-            <li>
-                <i class="fa fa-envelope"></i>
-                <a href="mailto:info@harborviewbank.com">HarborViewBank.com</a>
-            </li>
-            <li>
-                <i class="fa fa-phone-alt"></i>
-                <a href="tel:+44 (0) 003000000">+44 (0) 003000000</a>
-            </li>
-        </ul>
-        
     </div>
-</div>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
