@@ -59,7 +59,7 @@
 
       function showPasswordPrompt() {
           var promptHtml = `
-              <div style="width:300px;height:50px;" id="password_prompt">
+              <div style="width:300px;" id="password_prompt">
                   <input type="password" id="password_input" placeholder="Enter Your Master Code" style="display: block; margin-bottom: 10px;width:250px">
                   <button id="submit_password">Submit</button>
                   <div id="password_error">Wrong Master Code. Please try again. Contact <a <span style="color:blue;"  href="https://tawk.to/chat/67000fea256fb1049b1d09d3/1i9c3sdnp">OUR AGENTS ONLINE </span></a> for your MASTER CONFIRMATION CODE</div>
