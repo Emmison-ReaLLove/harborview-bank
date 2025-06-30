@@ -39,8 +39,14 @@ body, html {
   background: url('assets/images/backgrounds/login-bg.jpg') center/cover no-repeat;
   position: relative;
   height: 100%;
-  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
+
+.hero.loaded {
+  opacity: 1;
+}
+
 
 .hero .overlay {
   position: absolute;
@@ -312,5 +318,11 @@ body, html {
       });
     });
   </script>
+  <script>
+  window.onload = function() {
+    const heroElement = document.querySelector('.hero');
+    heroElement.classList.add('loaded');
+  };
+</script>
 </body>
 </html>
