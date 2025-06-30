@@ -751,20 +751,25 @@ body {
 
 .customer-care-numbers-table {
     width: 100%;
-
+    border-collapse: collapse;
     margin-top: 20px;
+    table-layout: fixed; /* makes columns share space equally */
 }
 
 .customer-care-numbers-table th,
 .customer-care-numbers-table td {
-    padding: 15px;
+    padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+  text-align: left;
+  word-wrap: break-word; /* wrap words nicely */
+  word-break: break-word; /* breaks long words if needed */
 }
 
 .customer-care-numbers-table th {
     background: #f4f4f4;
     color: #333;
+    font-weight: bold;
 }
 
 .customer-care-numbers-table .contact-info ul {
@@ -786,13 +791,21 @@ body {
 .customer-care-numbers-table .contact-info ul li a:hover {
     color: #ff9a02;
 }
+
+@media (max-width: 768px) {
+  .customer-care-numbers-table th,
+  .customer-care-numbers-table td {
+    font-size: 14px;
+  }
+
+  .customer-care-numbers-table td h3 {
+    font-size: 14px;
+  }
+}
+
 .form-group{
     width: 70%;
 }
-.header .inner-title .contact-info {
-    width:80%;
-}
-
             </style>
         </section>
         <!--End Customer Care Numbers Area-->
