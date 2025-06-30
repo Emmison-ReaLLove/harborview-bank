@@ -4,6 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login | Harborview Bank</title>
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Harborview Bank">
+  <!-- Open Graph (optional) -->
+  <meta property="og:title" content="Harborview Bank | Modern Banking for Your Future">
+  <meta property="og:description" content="Harborview Bank offers secure personal and business banking solutions.">
+  <meta property="og:url" content="https://harborviewbank.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://harborviewbank.com/assets/images/social-share.jpg">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
       /* Reset */
@@ -44,9 +59,9 @@ body, html {
 
 .dot {
   position: absolute;
-  width: 8px;
+  width: 70px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 10%;
   background: #ff9900;
   animation: orbit 8s linear infinite;
 }
@@ -59,8 +74,8 @@ body, html {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border-radius: 15px;
   padding: 40px;
@@ -170,9 +185,32 @@ body, html {
 <body>
   <div class="hero">
     <div class="overlay"></div>
-
+    <!-- Your login card -->
+    <div class="login-card">
+      <div class="logo">
+        <img src="assets/images/resources/logo-003.png" alt="Harborview Bank">
+      </div>
+      <h2>Sign In to Your Account</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Username" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password" required>
+        </div>
+        <div class="options">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <div class="error-message" id="error-message"></div>
+        <button type="submit" class="btn">Login</button>
+        <p class="signup-link">Not a member? <a href="register.html">Create an account</a></p>
+      </form>
+    </div>
     <!-- Orbit container with dots -->
-    <div style="position: relative;top: 500px;left: 500px;" class="orbit">
+    <div style="position: relative;top: 500px;left: 682px;" class="orbit">
       <!-- 40 evenly spaced dots -->
       <!-- They will be positioned by inline style: --i -->
       <!-- Create 40 dots for full circle, each 9 degrees apart -->
@@ -251,31 +289,6 @@ body, html {
       <div class="dot" style="--i: 333deg;"></div>
       <div class="dot" style="--i: 342deg;"></div>
       <div class="dot" style="--i: 351deg;"></div>
-    </div>
-
-    <!-- Your login card -->
-    <div class="login-card">
-      <div class="logo">
-        <img src="assets/images/resources/logo-003.png" alt="Harborview Bank">
-      </div>
-      <h2>Sign In to Your Account</h2>
-      <form id="loginForm">
-        <div class="input-group">
-          <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" required>
-        </div>
-        <div class="input-group">
-          <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" required>
-        </div>
-        <div class="options">
-          <label><input type="checkbox"> Remember me</label>
-          <a href="#">Forgot password?</a>
-        </div>
-        <div class="error-message" id="error-message"></div>
-        <button type="submit" class="btn">Login</button>
-        <p class="signup-link">Not a member? <a href="register.html">Create an account</a></p>
-      </form>
     </div>
   </div>
 
