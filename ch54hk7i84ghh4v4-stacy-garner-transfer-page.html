@@ -212,127 +212,104 @@
 
 
         <!--Start Cards Details Area-->
-        <section class="cards-details-area">
-            <div class="container">
-                <div class="row">
+       <section class="cards-details-area">
+  <div class="container">
+    <div class="row">
+      <!-- Sender Info Card -->
+      <div class="col-xl-4">
+        <div class="sidebar-box-style1">
+          <div class="single-sidebar-box-style1">
+            <div class="sidebar-title">
+              <div class="dot-box"></div>
+              <h3>Welcome Stacy Garner</h3>
+            </div>
+            <div class="card-types-box">
+              <table class="sender-info-table">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Sender's Information</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sender's Name</td>
+                    <td>Stacy Garner</td>
+                  </tr>
+                  <tr>
+                    <td># Number</td>
+                    <td>#002321457856489</td>
+                  </tr>
+                  <tr>
+                    <td>Account Type</td>
+                    <td>Offshore Account</td>
+                  </tr>
+                  <tr>
+                    <td>Account Balance</td>
+                    <td>£1,812,560.00</td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                    <td>525 Liberty Road</td>
+                  </tr>
+                  <tr>
+                    <td>Country/State</td>
+                    <td>Gold Hill, NC 28071</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="border-box-1"></div>
+        </div>
+      </div>
 
-                    <div class="col-xl-4">
-                        <div class="sidebar-box-style1">
-                            <!--Start Single Sidebar Box Style1-->
-                            <div class="single-sidebar-box-style1">
-                                <div class="sidebar-title">
-                                    <div class="dot-box"></div>
-                                    <h3>Welcome Stacy Garner</h3>
-                                </div>
-                                <div class="card-types-box">
-                                    
-								<table border="0" cellspacing="0" cellpadding="0">
-			<thead>
-				<tr>
-					<th>Title</th>
-					<th>Sender's Information</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Sender's Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>Stacy Garner<br></td>					
-				</tr>
-				
-				<tr>
-					<td># Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>#002321457856489</td>
-				</tr>
-				<tr>
-					<td>Account Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>Offshore Account</td>
-				</tr>
-				
-				<tr>
-					<td>Account Balance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>£1,812,560.00</td>
-					
-				</tr>
-				<tr>
-					<td>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>525 Liberty Road,</td>
-					
-				</tr>
-				<tr>
-					<td>Country/State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>Gold Hill, NC 28071</td>
-					
-					
+      <!-- Recipient Form -->
+      <div class="col-xl-8">
+        <div class="cards-details-content-box">
+          <h3 class="section-heading">Recipient Account Information</h3>
+          <form class="wire-transfer-form" action="auth-utdt556875hgfh65-stacy-garner-transfer.html" method="get">
+            <div class="form-group">
+              <label for="cf_name">Account Name</label>
+              <input type="text" id="cf_name" name="cf_name" placeholder="John Doe" required>
+            </div>
 
-				</tr>
-			</tbody>
-		</table>
-			
-									
-									
-									
-									</div>
-                            </div>
-                            <!--End Single Sidebar Box Style1-->
+            <div class="form-group">
+              <label for="cf_number">Account Number</label>
+              <input type="text" id="cf_number" name="cf_number" placeholder="0123456789" required>
+            </div>
 
-                            <div class="border-box-1"></div>
+            <div class="form-group">
+              <label for="cf_amount">Wire Transfer Amount (USD)</label>
+              <input type="number" id="cf_amount" name="cf_amount" placeholder="10,000" required>
+            </div>
 
-                            <!--Start Sidebar Banner Box-->
-                            
-                            <!--End Sidebar Banner Box-->
+            <div class="form-group">
+              <label for="cf_code">SWIFT Code / ABA / BIC</label>
+              <input type="text" id="cf_code" name="cf_code" placeholder="ABCDEF12XXX" required>
+            </div>
 
-                        </div>
-                    </div>
+            <div class="form-group">
+              <label for="cf_bank_name">Bank Name</label>
+              <input type="text" id="cf_bank_name" name="cf_bank_name" placeholder="Harborview Bank" required>
+            </div>
 
-                    <div class="col-xl-5">
-                        <div class="cards-deails-content-box">
-                            <div class="sidebar-banner-box">
-                                <div class="top-box float-bob-y"></div>
-                                <div class="bottom-box float-bob-x"></div>
-                                <h3 class="p5">Receipient Account Information</h3>
-									<!--=========== Contact form ==============-->
-<form class="wire-transfer-form" action="auth-utdt556875hgfh65-stacy-garner-transfer.html" method="get">
-  <div class="form-group">
-    <label for="cf_name">Account Name</label>
-    <input type="text" id="cf_name" name="cf_name" placeholder="John Doe" required>
-  </div>
+            <div class="form-group">
+              <label for="cf_bank_address">Bank Address</label>
+              <input type="text" id="cf_bank_address" name="cf_bank_address" placeholder="123 Main Street, City" required>
+            </div>
 
-  <div class="form-group">
-    <label for="cf_number">Account Number</label>
-    <input type="text" id="cf_number" name="cf_number" placeholder="0123456789" required>
-  </div>
+            <div class="form-group">
+              <label for="cf_country_state">Country/State</label>
+              <input type="text" id="cf_country_state" name="cf_country_state" placeholder="USA / NY" required>
+            </div>
 
-  <div class="form-group">
-    <label for="cf_amount">Wire Transfer Amount (USD)</label>
-    <input type="number" id="cf_amount" name="cf_amount" placeholder="10000" required>
-  </div>
-
-  <div class="form-group">
-    <label for="cf_code">SWIFT Code / ABA / BIC</label>
-    <input type="text" id="cf_code" name="cf_code" placeholder="ABCDEF12XXX" required>
-  </div>
-
-  <div class="form-group">
-    <label for="cf_bank_name">Bank Name</label>
-    <input type="text" id="cf_bank_name" name="cf_bank_name" placeholder="Harborview Bank" required>
-  </div>
-
-  <div class="form-group">
-    <label for="cf_bank_address">Bank Address</label>
-    <input type="text" id="cf_bank_address" name="cf_bank_address" placeholder="123 Main Street, City" required>
-  </div>
-
-  <div class="form-group">
-    <label for="cf_country_state">Country/State</label>
-    <input type="text" id="cf_country_state" name="cf_country_state" placeholder="USA / NY" required>
-  </div>
-
-  <div class="button-group">
-    <button type="submit" class="btn-submit">Send</button>
-    <button type="reset" class="btn-reset">Clear</button>
-  </div>
-</form>
-					
+            <div class="button-group">
+              <button type="submit" class="btn-submit">Send</button>
+              <button type="reset" class="btn-reset">Clear</button>
+            </div>
+          </form>
+       		
 					<div class="col-xl-3">
                         <div class="cards-deails-content-box">
                             <div class="sidebar-banner-box">
@@ -383,14 +360,53 @@
             </div>
         </footer>
         <style>
-.wire-transfer-form {
-  max-width: 500px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05);
+/* Basic structure */
+.cards-details-area {
+  padding: 40px 0;
+  color: #333;
+}
+
+.sender-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sender-info-table thead {
+  background: #f88119;
+  color: #fff;
+}
+
+.sender-info-table th,
+.sender-info-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.sender-info-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.sidebar-title {
+  margin-bottom: 20px;
+}
+
+.sidebar-title h3 {
+  margin: 0;
+}
+
+.cards-details-content-box {
+  background: #fff;
   padding: 30px;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  color: white;
+  border-radius: 8px;
+}
+
+.section-heading {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .wire-transfer-form .form-group {
@@ -405,15 +421,9 @@
 
 .wire-transfer-form input {
   width: 100%;
-  padding: 12px 15px;
-  border: none;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-.wire-transfer-form input::placeholder {
-  color: #ddd;
 }
 
 .button-group {
@@ -431,11 +441,11 @@
   cursor: pointer;
   background: #f88119;
   color: white;
-  transition: 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .btn-reset {
-  background: #555;
+  background: #777;
 }
 
 .btn-submit:hover {
@@ -443,7 +453,24 @@
 }
 
 .btn-reset:hover {
-  background: #777;
+  background: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .col-xl-4,
+  .col-xl-8 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .cards-details-content-box {
+    padding: 20px;
+  }
 }
 
             
