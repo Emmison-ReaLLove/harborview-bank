@@ -238,50 +238,43 @@
 }
 /* ✅ Add to your CSS file */
 .trust-badges {
-  background: #f7f9fc;
-  padding: 50px 0;
+  padding: 40px 0;
+  background: #f9f9f9;
   text-align: center;
 }
 
 .trust-heading {
-  font-size: 24px;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #102a43;
-  margin-bottom: 40px;
 }
 
-.badges-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 60px;
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
 }
 
 .badge {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 160px;
+  max-width: 200px;
+  text-align: center;
 }
 
 .badge svg {
-  width: 60px;
-  height: 60px;
   margin-bottom: 10px;
 }
 
 .badge p {
-  font-size: 14px;
-  color: #4a4a4a;
   margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .badges-row {
-    flex-direction: column;
-    gap: 30px;
-  }
-}
 
 .slogan-area {
   background: url('assets/images/backgrounds/blue-curve-frame-template_53876-114605.avif') no-repeat center center fixed;
