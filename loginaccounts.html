@@ -54,28 +54,6 @@ body, html {
   background: #392b58a2;
 } 
 
-.orbit {
-  position: relative;
-  top: 60%; left: 62.3%;
-  transform: translate(-30%, -30%);
-  width: 100px;
-  height: 100px;
-  border-radius: 10%;
-  pointer-events: none;
-}
-
-.dot {
-  position: relative;
-  width: 70px;
-  height: 8px;
-  border-radius: 10%;
-  background: #ff9900;
-  animation: orbit 8s linear infinite;
-}
-
-.dot:nth-child(n) {
-  --i: calc(var(--n) * 1deg);
-}
 
 .login-card {
   position: absolute;
@@ -173,25 +151,49 @@ body, html {
   color: #fff;
   text-decoration: underline;
 }
+/* Sparks container */
+.sparks {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1; /* behind your login card */
+}
 
-@keyframes orbit {
+/* Each spark */
+.spark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f99 0%, rgba(255, 255, 255, 0) 80%);
+  opacity: 0.7;
+  animation: float 10s linear infinite, blink 2s ease-in-out infinite alternate;
+}
+
+/* Floating movement */
+@keyframes float {
   0% {
-    transform: rotate(var(--i)) translateX(300px) rotate(calc(-1 * var(--i)));
-    background: #ff9900;
-  }
-  50% {
-    background: #ffd700;
+    transform: translate(0, 0);
   }
   100% {
-    transform: rotate(calc(360deg + var(--i))) translateX(300px) rotate(calc(-360deg - var(--i)));
-    background: #ff9900;
+    transform: translate(var(--x), var(--y));
   }
 }
+
+/* Twinkle effect */
+@keyframes blink {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
   </style>
 </head>
 <body>
   <div class="hero">
     <div class="overlay"></div>
+    <div class="sparks"></div>
     <!-- Your login card -->
     <div class="login-card">
       <div class="logo">
@@ -216,8 +218,8 @@ body, html {
         <p class="signup-link">Not a member? <a href="register.html">Create an account</a></p>
       </form>
     </div>
-    <!-- Orbit container with dots -->
-    <div class="orbit">
+    <!-- Orbit container with dots 
+    <div class="orbit">-->
       <!-- 40 evenly spaced dots -->
       <!-- They will be positioned by inline style: --i -->
       <!-- Create 40 dots for full circle, each 9 degrees apart -->
@@ -255,7 +257,7 @@ body, html {
       <!-- -->
 
       <!-- 40 dots -->
-      <!-- prettier-ignore -->
+      <!-- prettier-ignore 
       <div class="dot" style="--i: 0deg;"></div>
       <div class="dot" style="--i: 9deg;"></div>
       <div class="dot" style="--i: 18deg;"></div>
@@ -296,7 +298,7 @@ body, html {
       <div class="dot" style="--i: 333deg;"></div>
       <div class="dot" style="--i: 342deg;"></div>
       <div class="dot" style="--i: 351deg;"></div>
-    </div>
+    </div>-->
   </div>
 
   <script>
@@ -323,6 +325,35 @@ body, html {
     const heroElement = document.querySelector('.hero');
     heroElement.classList.add('loaded');
   };
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sparksContainer = document.querySelector('.sparks');
+
+    const NUM_SPARKS = 50; // More sparks = denser effect
+
+    for (let i = 0; i < NUM_SPARKS; i++) {
+      const spark = document.createElement('div');
+      spark.classList.add('spark');
+
+      // Random start position
+      spark.style.top = `${Math.random() * 100}%`;
+      spark.style.left = `${Math.random() * 100}%`;
+
+      // Random float direction
+      const x = Math.random() * 200 - 100; // -100% to +100% of width
+      const y = Math.random() * 200 - 100; // -100% to +100% of height
+      spark.style.setProperty('--x', `${x}%`);
+      spark.style.setProperty('--y', `${y}%`);
+
+      // Random animation duration for float and blink
+      const floatDuration = 20 + Math.random() * 20; // 20s to 40s
+      const blinkDuration = 2 + Math.random() * 3;   // 2s to 5s
+      spark.style.animationDuration = `${floatDuration}s, ${blinkDuration}s`;
+
+      sparksContainer.appendChild(spark);
+    }
+  });
 </script>
 </body>
 </html>
