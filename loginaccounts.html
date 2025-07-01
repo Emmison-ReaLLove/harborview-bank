@@ -164,8 +164,8 @@ body, html {
 /* Spark element */
 .spark {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: radial-gradient(circle, #fff, transparent);
   opacity: 0.8;
@@ -333,7 +333,7 @@ body, html {
   document.addEventListener('DOMContentLoaded', () => {
     const field = document.querySelector('.spark-field');
 
-    const NUM_SPARKS = 80; // More = richer
+    const NUM_SPARKS = 120; // More = richer
 
     for (let i = 0; i < NUM_SPARKS; i++) {
       const spark = document.createElement('div');
