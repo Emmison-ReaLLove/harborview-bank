@@ -238,41 +238,49 @@
 }
 /* ✅ Add to your CSS file */
 .trust-badges {
-  padding: 40px 0;
-  background: #f9f9f9;
+  background: #f7f9fc;
+  padding: 50px 0;
   text-align: center;
 }
 
 .trust-heading {
-  margin-bottom: 30px;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
+  color: #102a43;
+  margin-bottom: 40px;
 }
 
-.badges-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  align-items: center;
+.badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
 }
 
 .badge {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  max-width: 200px;
+  max-width: 160px;
 }
 
 .badge svg {
+  width: 60px;
+  height: 60px;
   margin-bottom: 10px;
 }
 
 .badge p {
+  font-size: 14px;
+  color: #4a4a4a;
   margin: 0;
-  font-size: 0.95rem;
-  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .badges-row {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 
 .slogan-area {
