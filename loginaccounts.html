@@ -151,40 +151,44 @@ body, html {
   color: #fff;
   text-decoration: underline;
 }
-/* Container for sparks */
-.spark-orbit-container {
+.spark-field {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1; /* behind login card */
   pointer-events: none;
-  z-index: 1; /* Behind the login card */
 }
 
-/* Spark */
+/* Spark element */
 .spark {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: radial-gradient(circle, #fff 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, #fff, transparent);
   opacity: 0.8;
-  filter: blur(2px);
+  filter: blur(3px);
+  will-change: transform, opacity;
+  animation: drift var(--duration) linear infinite,
+             flicker var(--flicker) ease-in-out infinite alternate;
 }
 
-/* Orbit animation */
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(var(--radius)) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg); }
+/* Random drift direction */
+@keyframes drift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(var(--x), var(--y)) scale(0.8);
+  }
 }
 
-/* Twinkle animation */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
+/* Flicker & twinkle */
+@keyframes flicker {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
 }
 
   </style>
@@ -192,7 +196,7 @@ body, html {
 <body>
   <div class="hero">
     <div class="overlay"></div>
-    <div class="spark-orbit-container"></div>
+    <div class="spark-field"></div>
     <!-- Your login card -->
     <div class="login-card">
       <div class="logo">
@@ -327,32 +331,43 @@ body, html {
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.spark-orbit-container');
+    const field = document.querySelector('.spark-field');
 
-    const NUM_SPARKS = 40; // More for denser effect
+    const NUM_SPARKS = 80; // More = richer
 
     for (let i = 0; i < NUM_SPARKS; i++) {
       const spark = document.createElement('div');
       spark.classList.add('spark');
 
-      // Random radius (orbit distance)
-      const radius = 50 + Math.random() * 200; // px
+      // Random position
+      spark.style.top = `${Math.random() * 100}%`;
+      spark.style.left = `${Math.random() * 100}%`;
 
-      // Random speed
-      const duration = 10 + Math.random() * 20; // seconds
+      // Random drift distance
+      const x = (Math.random() * 200 - 100) + '%'; // -100% to +100% viewport
+      const y = (Math.random() * 200 - 100) + '%';
 
-      // Random direction (normal or reverse)
-      const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
+      // Random durations
+      const duration = 15 + Math.random() * 30; // 15s to 45s drift
+      const flicker = 2 + Math.random() * 4; // 2s to 6s flicker
 
-      // Random delay for a scattered look
-      const delay = Math.random() * duration;
+      // Random delay so they don't all move at once
+      const delay = `${Math.random() * duration}s`;
 
-      // Set CSS variables
-      spark.style.setProperty('--radius', `${radius}px`);
-      spark.style.animation = `orbit ${duration}s linear infinite ${direction}, twinkle 2s ease-in-out infinite alternate`;
-      spark.style.animationDelay = `${delay}s, ${Math.random() * 2}s`;
+      // Custom properties
+      spark.style.setProperty('--x', x);
+      spark.style.setProperty('--y', y);
+      spark.style.setProperty('--duration', `${duration}s`);
+      spark.style.setProperty('--flicker', `${flicker}s`);
+      spark.style.animationDelay = `${delay}, ${Math.random() * flicker}s`;
 
-      container.appendChild(spark);
+      // Random size for depth effect
+      const size = 4 + Math.random() * 8; // 4px to 12px
+      spark.style.width = `${size}px`;
+      spark.style.height = `${size}px`;
+      spark.style.filter = `blur(${Math.random() * 2 + 2}px)`;
+
+      field.appendChild(spark);
     }
   });
 </script>
