@@ -151,41 +151,40 @@ body, html {
   color: #fff;
   text-decoration: underline;
 }
-/* Sparks container */
-.sparks {
+/* Container for sparks */
+.spark-orbit-container {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1; /* behind your login card */
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 1; /* Behind the login card */
 }
 
-/* Each spark */
+/* Spark */
 .spark {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: radial-gradient(circle, #f99 0%, rgba(255, 255, 255, 0) 80%);
-  opacity: 0.7;
-  animation: float 10s linear infinite, blink 2s ease-in-out infinite alternate;
+  background: radial-gradient(circle, #fff 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0.8;
+  filter: blur(2px);
 }
 
-/* Floating movement */
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(var(--x), var(--y));
-  }
+/* Orbit animation */
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(var(--radius)) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg); }
 }
 
-/* Twinkle effect */
-@keyframes blink {
-  0% { opacity: 0.3; }
-  100% { opacity: 1; }
+/* Twinkle animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }
 
   </style>
@@ -193,7 +192,7 @@ body, html {
 <body>
   <div class="hero">
     <div class="overlay"></div>
-    <div class="sparks"></div>
+    <div class="spark-orbit-container"></div>
     <!-- Your login card -->
     <div class="login-card">
       <div class="logo">
@@ -328,32 +327,35 @@ body, html {
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const sparksContainer = document.querySelector('.sparks');
+    const container = document.querySelector('.spark-orbit-container');
 
-    const NUM_SPARKS = 50; // More sparks = denser effect
+    const NUM_SPARKS = 40; // More for denser effect
 
     for (let i = 0; i < NUM_SPARKS; i++) {
       const spark = document.createElement('div');
       spark.classList.add('spark');
 
-      // Random start position
-      spark.style.top = `${Math.random() * 100}%`;
-      spark.style.left = `${Math.random() * 100}%`;
+      // Random radius (orbit distance)
+      const radius = 50 + Math.random() * 200; // px
 
-      // Random float direction
-      const x = Math.random() * 200 - 100; // -100% to +100% of width
-      const y = Math.random() * 200 - 100; // -100% to +100% of height
-      spark.style.setProperty('--x', `${x}%`);
-      spark.style.setProperty('--y', `${y}%`);
+      // Random speed
+      const duration = 10 + Math.random() * 20; // seconds
 
-      // Random animation duration for float and blink
-      const floatDuration = 20 + Math.random() * 20; // 20s to 40s
-      const blinkDuration = 2 + Math.random() * 3;   // 2s to 5s
-      spark.style.animationDuration = `${floatDuration}s, ${blinkDuration}s`;
+      // Random direction (normal or reverse)
+      const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
 
-      sparksContainer.appendChild(spark);
+      // Random delay for a scattered look
+      const delay = Math.random() * duration;
+
+      // Set CSS variables
+      spark.style.setProperty('--radius', `${radius}px`);
+      spark.style.animation = `orbit ${duration}s linear infinite ${direction}, twinkle 2s ease-in-out infinite alternate`;
+      spark.style.animationDelay = `${delay}s, ${Math.random() * 2}s`;
+
+      container.appendChild(spark);
     }
   });
 </script>
+
 </body>
 </html>
