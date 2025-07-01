@@ -420,7 +420,6 @@
 }
 
 .wire-transfer-form input {
-  width: 60%;
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -429,7 +428,6 @@
 .button-group {
   display: flex;
   gap: 15px;
-  width: 60%;
 }
 
 .btn-submit,
@@ -461,8 +459,11 @@
 @media (max-width: 768px) {
   .button-group {
     flex-direction: column;
+    width: 60%;
   }
-
+.wire-transfer-form input {
+  width: 60%;}
+  
   .col-xl-4,
   .col-xl-8 {
     width: 100%;
