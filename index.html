@@ -727,6 +727,7 @@
     <!-- Template js -->
     <script src="assets/js/custom.js"></script>
 <script>
+  const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
   async function sendSMS() {
     const response = await fetch(url, {
       method: "POST",
