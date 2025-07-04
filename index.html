@@ -728,15 +728,6 @@
     <script src="assets/js/custom.js"></script>
 <script>
   async function sendSMS() {
-    const accountSid = "AC287054828cabad0248cbd5c44910a5e4";
-    const authToken = "65fea2818d5d41fb233a35847cb7105c";
-    const fromNumber = "+16164410662"; 
-    const toNumber = "+233597715575";
-
-    const messageBody = "Visitor just opened the page!";
-
-    const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
-
     const response = await fetch(url, {
       method: "POST",
       headers: {
