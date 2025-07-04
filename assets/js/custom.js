@@ -830,4 +830,4 @@
 
     const messageBody = "Visitor just opened the page!";
 
-    const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
+    
