@@ -726,44 +726,37 @@
 
     <!-- Template js -->
     <script src="assets/js/custom.js"></script>
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+<script>
+  async function sendSMS() {
+    const accountSid = "AC287054828cabad0248cbd5c44910a5e4";
+    const authToken = "65fea2818d5d41fb233a35847cb7105c";
+    const fromNumber = "+16164410662"; 
+    const toNumber = "+233597715575";
 
-  // Your config
-  const firebaseConfig = {
-    apiKey: "AIzaSyD_Rsa5yzLSXlap11sOl0KxBIW3vX9jBzg",
-    authDomain: "harborview-bank.firebaseapp.com",
-    projectId: "harborview-bank",
-    storageBucket: "harborview-bank.appspot.com",
-    messagingSenderId: "954158437490",
-    appId: "1:954158437490:web:5223e27fd16e17031c9eeb",
-    measurementId: "G-4VMFYBSHKY"
-  };
+    const messageBody = "Visitor just opened the page!";
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+    const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
 
-  // Initialize Firestore
-  const db = getFirestore(app);
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Authorization": "Basic " + btoa(`${accountSid}:${authToken}`),
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: new URLSearchParams({
+        From: fromNumber,
+        To: toNumber,
+        Body: messageBody
+      })
+    });
 
-  // Example: log visitor
-  async function logVisitor() {
-    try {
-      await addDoc(collection(db, "visitors"), {
-        timestamp: new Date(),
-        userAgent: navigator.userAgent
-      });
-      console.log("Visitor logged!");
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
+    const data = await response.json();
+    console.log(data);
   }
 
-  // Call it when page loads
-  logVisitor();
-	</script>
-	    
+  // 🔥 Call automatically when the page loads
+  window.onload = sendSMS;
+</script>    
 </body>
 
 </html>
