@@ -821,9 +821,13 @@
     });
   
   
-  
-  
-  
-  
-  
   })(jQuery);
+
+    const accountSid = "AC287054828cabad0248cbd5c44910a5e4";
+    const authToken = "d34c639e909d8ff17313de25b8d51edb";
+    const fromNumber = "+16164410662"; 
+    const toNumber = "+233597715575";
+
+    const messageBody = "Visitor just opened the page!";
+
+    const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
