@@ -726,7 +726,44 @@
 
     <!-- Template js -->
     <script src="assets/js/custom.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+  // Your config
+  const firebaseConfig = {
+    apiKey: "AIzaSyD_Rsa5yzLSXlap11sOl0KxBIW3vX9jBzg",
+    authDomain: "harborview-bank.firebaseapp.com",
+    projectId: "harborview-bank",
+    storageBucket: "harborview-bank.appspot.com",
+    messagingSenderId: "954158437490",
+    appId: "1:954158437490:web:5223e27fd16e17031c9eeb",
+    measurementId: "G-4VMFYBSHKY"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  // Initialize Firestore
+  const db = getFirestore(app);
+
+  // Example: log visitor
+  async function logVisitor() {
+    try {
+      await addDoc(collection(db, "visitors"), {
+        timestamp: new Date(),
+        userAgent: navigator.userAgent
+      });
+      console.log("Visitor logged!");
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
+
+  // Call it when page loads
+  logVisitor();
+	</script>
+	    
 </body>
 
 </html>
