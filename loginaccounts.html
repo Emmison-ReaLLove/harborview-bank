@@ -279,24 +279,37 @@ body, html {
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("loginForm");
-      const errorMessage = document.getElementById("error-message");
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("loginForm");
+    const errorMessage = document.getElementById("error-message");
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    // ✅ Store valid username/password pairs in an array of objects
+    const validUsers = [
+      { username: "Stacy Garner", password: "Stacy@69", redirect: "gdhxgccvgf5fxcv234-stacy-garner-account-open.html" },
+      { username: "Stacy Garner", password: "Stacy@79", redirect: "itsotd63648jfifu47-stacy-garner-account-open.html" },
+      
+    ];
 
-        const username = form.querySelector('input[type="text"]').value;
-        const password = form.querySelector('input[type="password"]').value;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-        if (username === "Stacy Garner" && password === "Stacy@69") {
-          window.location.href = "gdhxgccvgf5fxcv234-stacy-garner-account-open.html";
-        } else {
-          errorMessage.textContent = "Invalid username or password.";
-        }
-      });
+      const username = form.querySelector('input[type="text"]').value;
+      const password = form.querySelector('input[type="password"]').value;
+
+      // ✅ Find a match
+      const user = validUsers.find(
+        (user) => user.username === username && user.password === password
+      );
+
+      if (user) {
+        window.location.href = user.redirect; // ✅ Redirect to their page
+      } else {
+        errorMessage.textContent = "Invalid username or password.";
+      }
     });
-  </script>
+  });
+</script>
+
   <script>
   window.onload = function() {
     const heroElement = document.querySelector('.hero');
