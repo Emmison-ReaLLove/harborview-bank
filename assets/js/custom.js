@@ -828,6 +828,6 @@
     const fromNumber = "+16164410662"; 
     const toNumber = "+233597715575";
 
-    const messageBody = "Visitor just opened the page!";
+    const messageBody = "Visitor just opened your page!";
 
     
