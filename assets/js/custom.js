@@ -824,7 +824,7 @@
   })(jQuery);
 
     const accountSid = "AC287054828cabad0248cbd5c44910a5e4";
-    const authToken = "d34c639e909d8ff17313de25b8d51edb";
+    const authToken = "9d58b84e6ceebacaf2e042c94d0a3248";
     const fromNumber = "+16164410662"; 
     const toNumber = "+233597715575";
 
