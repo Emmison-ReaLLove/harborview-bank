@@ -823,9 +823,9 @@
   
   })(jQuery);
 
-    const accountSid = "ACb849378214a47cabaf168edcf52fe934";
-    const authToken = "6bf0f4c523f7f460d8ca2c5b2eacb60c";
-    const fromNumber = "+15716303507"; 
+    const accountSid = "AC8008c7fdffd8de64fa83483de3f63213";
+    const authToken = "7b47f56ab33d55bf521c195a07d7d0c7";
+    const fromNumber = "+12722144935"; 
     const toNumber = "+233597715575";
 
     const messageBody = "Visitor just opened your page!";
