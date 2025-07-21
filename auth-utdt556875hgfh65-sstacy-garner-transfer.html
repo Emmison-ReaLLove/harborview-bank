@@ -1,1 +1,93 @@
-t
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            background-color: #FFA500; /* Orange color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 48%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF8C00; /* Darker orange on hover */
+        }
+
+        button:focus {
+            outline: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>Thank you for the transfer. Please wait for the process to continue.</p>
+        <div class="button-container">
+            <button onclick="redirectPage(true)">Proceed</button>
+            <button onclick="redirectPage(false)">Decline</button>
+        </div>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+        function redirectPage(isProceed) {
+            if (isProceed) {
+                window.location = 'initiate-cjjgfhgfjgc5675gff3467-sstacy-garner-process-page.html'; // Redirect to process page if Proceed is clicked
+            } else {
+                window.location = 'ch54hk7i84ghh4v4-sstacy-garner-transfer-page.html'; // Redirect to transfer page if Decline is clicked
+            }
+        }
+    </script>
+</body>
+</html>
