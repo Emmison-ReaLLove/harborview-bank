@@ -38,7 +38,7 @@
                   
                   // Handle the end of animation
                   else if (Math.ceil(currentProgress) === 98) {
-                      labelEl.text('C.O.T Error In Process');
+                      labelEl.text('Transaction Declined');
                       setTimeout(function() {
                           labelEl.fadeOut();
                       }, 100);
