@@ -33,7 +33,7 @@
                       
                   } 
                   else if (Math.ceil(currentProgress) === 92) {
-                    labelEl.text('Processing Initiating ');
+                    labelEl.text('Transfer Initiating ');
                   }
                   
                   // Handle the end of animation
