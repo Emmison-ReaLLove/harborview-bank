@@ -934,32 +934,31 @@ card.style.background="rgba(255,255,255,.04)";
 // Button Ripple Effect
 // ===============================
 
-document.querySelector(".btn").addEventListener("click",function(e){
+document.querySelector(".btn").addEventListener("click", function (e) {
 
-e.preventDefault();
+    e.preventDefault();
 
-const ripple=document.createElement("span");
+    const ripple = document.createElement("span");
 
-const x=e.offsetX;
-const y=e.offsetY;
+    const x = e.offsetX;
+    const y = e.offsetY;
 
-ripple.style.position="absolute";
-ripple.style.left=x+"px";
-ripple.style.top=y+"px";
-ripple.style.width="10px";
-ripple.style.height="10px";
-ripple.style.borderRadius="50%";
-ripple.style.background="rgba(255,255,255,.7)";
-ripple.style.transform="translate(-50%,-50%)";
-ripple.style.animation="ripple .6s linear";
+    ripple.style.position = "absolute";
+    ripple.style.left = x + "px";
+    ripple.style.top = y + "px";
+    ripple.style.width = "10px";
+    ripple.style.height = "10px";
+    ripple.style.borderRadius = "50%";
+    ripple.style.background = "rgba(255,255,255,.7)";
+    ripple.style.transform = "translate(-50%,-50%)";
+    ripple.style.animation = "ripple .6s linear";
 
-this.appendChild(ripple);
+    this.appendChild(ripple);
 
-setTimeout(()=>{
-
-ripple.remove();
-
-},600);
+    setTimeout(() => {
+        ripple.remove();
+        window.open(this.href, "_blank"); // Opens Tawk.to after animation
+    }, 600);
 
 });
 
