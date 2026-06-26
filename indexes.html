@@ -1,399 +1,1000 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HarborView Bank | Maintenance</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>HarborView Bank | Scheduled Maintenance</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="background"></div>
-
-<div class="container">
-
-    <div class="logo">
-
-        <!-- Harbor icon -->
-        <svg viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="52"/>
-
-            <path d="M25 65
-                     C38 54 52 54 65 65
-                     C78 76 92 76 95 65"/>
-
-            <path d="M30 82
-                     C43 73 57 73 70 82
-                     C83 91 92 91 94 82"/>
-
-            <path d="M60 28
-                     L60 62"/>
-
-            <path d="M60 30
-                     L75 45"/>
-
-        </svg>
-
-        <h2>HarborView Bank</h2>
-
-    </div>
-
-    <div class="card">
-
-        <span class="badge">
-            Scheduled Maintenance
-        </span>
-
-        <h1>We'll Be Back Soon</h1>
-
-        <p class="description">
-
-            Our online banking platform is currently unavailable while
-            we perform important system upgrades to improve security,
-            reliability and performance.
-
-            We sincerely apologize for any inconvenience and appreciate
-            your patience.
-
-        </p>
-
-        <div class="status-box">
-
-            <div class="status">
-                <span>Status</span>
-                <strong>Offline</strong>
-            </div>
-
-            <div class="status">
-                <span>Reason</span>
-                <strong>Maintenance</strong>
-            </div>
-
-        </div>
-
-        <div class="progress">
-            <div class="bar"></div>
-        </div>
-
-        <p class="small">
-
-            Need immediate assistance?
-
-            Please contact our customer support or visit your nearest
-            HarborView Bank branch.
-
-        </p>
-
-    </div>
-
-    <footer>
-
-        © 2026 HarborView Bank. All Rights Reserved.
-
-    </footer>
-
-</div>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
 <style>
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+   RESET
+========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-
-    font-family:Inter,sans-serif;
-
-    background:#06192d;
-
-    overflow:hidden;
-
-    color:white;
-
+html{
+    scroll-behavior:smooth;
 }
 
-.background{
+body{
+    font-family:'Inter',sans-serif;
+    background:#090b12;
+    color:#fff;
+    overflow-x:hidden;
+}
 
+/* ==========================
+   BACKGROUND
+========================== */
+
+.background{
     position:fixed;
     inset:0;
 
     background:
-    radial-gradient(circle at top right,#21446f 0%,transparent 35%),
-    radial-gradient(circle at bottom left,#102c4c 0%,transparent 45%),
-    linear-gradient(135deg,#04111d,#071d37);
+    radial-gradient(circle at top right,#ff8b1f55,transparent 35%),
+    radial-gradient(circle at bottom left,#ff7b0050,transparent 35%),
+    linear-gradient(135deg,#090b12,#12131c,#090b12);
 
+    z-index:-3;
 }
+
+/* animated glow */
 
 .background::before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    inset:0;
+width:180%;
+height:180%;
 
-    background:
+left:-40%;
+top:-40%;
 
-    repeating-linear-gradient(
+background:
+repeating-radial-gradient(circle,
+transparent 0px,
+transparent 130px,
+rgba(255,140,0,.03) 132px,
+transparent 135px);
 
-        0deg,
+animation:rotateGlow 45s linear infinite;
 
-        transparent,
+}
 
-        transparent 70px,
+@keyframes rotateGlow{
 
-        rgba(255,255,255,.02) 71px
+from{
+transform:rotate(0deg);
+}
 
-    );
+to{
+transform:rotate(360deg);
+}
 
 }
 
-.container{
+/* ==========================
+   WRAPPER
+========================== */
 
-    position:relative;
+.wrapper{
 
-    width:100%;
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
-
-    padding:40px;
+width:min(1100px,92%);
+margin:auto;
+padding:60px 0;
 
 }
+
+/* ==========================
+   LOGO
+========================== */
 
 .logo{
 
-    text-align:center;
+display:flex;
 
-    margin-bottom:35px;
+align-items:center;
 
-}
+justify-content:center;
 
-.logo svg{
+gap:15px;
 
-    width:80px;
-
-    height:80px;
-
-    fill:none;
-
-    stroke:#d9b96f;
-
-    stroke-width:5;
+margin-bottom:35px;
 
 }
 
-.logo h2{
+.logo-icon{
 
-    margin-top:12px;
+width:72px;
+height:72px;
 
-    font-weight:700;
+border-radius:22px;
 
-    letter-spacing:.5px;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(145deg,#ff9d25,#ff6700);
+
+font-size:32px;
+
+box-shadow:
+
+0 20px 45px rgba(255,120,0,.35);
 
 }
+
+.logo-text{
+
+font-size:22px;
+
+font-weight:700;
+
+}
+
+.logo-text span{
+
+color:#ff8f21;
+
+}
+
+.logo-text strong{
+
+font-weight:700;
+
+}
+
+/* ==========================
+   MAIN CARD
+========================== */
 
 .card{
 
-    width:100%;
+background:rgba(255,255,255,.05);
 
-    max-width:720px;
+backdrop-filter:blur(24px);
 
-    background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
 
-    backdrop-filter:blur(18px);
+border-radius:34px;
 
-    border:1px solid rgba(255,255,255,.12);
+padding:45px;
 
-    border-radius:22px;
+box-shadow:
 
-    padding:55px;
+0 20px 80px rgba(0,0,0,.45),
 
-    text-align:center;
-
-    box-shadow:
-
-    0 30px 60px rgba(0,0,0,.35);
+0 0 40px rgba(255,120,0,.08);
 
 }
 
 .badge{
 
-    display:inline-block;
+display:inline-flex;
 
-    padding:8px 18px;
+align-items:center;
 
-    border-radius:30px;
+gap:10px;
 
-    background:#d9b96f;
+padding:12px 22px;
 
-    color:#06192d;
+border-radius:999px;
 
-    font-weight:700;
+background:rgba(255,145,0,.09);
 
-    font-size:.9rem;
+border:1px solid rgba(255,145,0,.35);
+
+color:#ff9a22;
+
+font-weight:600;
+
+margin-bottom:35px;
 
 }
 
-h1{
+.card h1{
 
-    margin-top:28px;
+font-size:72px;
 
-    font-size:3rem;
+line-height:1.05;
 
-    font-weight:800;
+font-weight:800;
+
+margin-bottom:25px;
+
+}
+
+.card h1 span{
+
+display:block;
+
+color:#ff8614;
 
 }
 
 .description{
 
-    margin-top:24px;
+max-width:720px;
 
-    color:#c9d3de;
+font-size:20px;
 
-    line-height:1.8;
+line-height:1.8;
 
-    font-size:1.05rem;
+color:#cfcfcf;
 
-}
-
-.status-box{
-
-    display:flex;
-
-    gap:25px;
-
-    margin:40px 0;
+margin-bottom:45px;
 
 }
 
-.status{
+/* ==========================
+   PROGRESS BAR
+========================== */
 
-    flex:1;
-
-    background:rgba(255,255,255,.05);
-
-    border-radius:15px;
-
-    padding:24px;
-
-}
-
-.status span{
-
-    display:block;
-
-    color:#8ca2b8;
-
-    margin-bottom:8px;
-
-}
-
-.status strong{
-
-    font-size:1.2rem;
-
+.progress-title{
+    text-align:center;
+    color:#ff9d24;
+    text-transform:uppercase;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:20px;
 }
 
 .progress{
-
+    position:relative;
     width:100%;
-
-    height:8px;
-
-    border-radius:30px;
-
-    background:rgba(255,255,255,.1);
-
+    height:28px;
+    border-radius:50px;
+    background:rgba(255,255,255,.08);
     overflow:hidden;
-
+    border:1px solid rgba(255,255,255,.08);
+    margin-bottom:30px;
 }
 
-.bar{
-
-    width:35%;
-
+.progress-fill{
     height:100%;
-
-    background:linear-gradient(
-    90deg,
-    #d9b96f,
-    #f4df9d);
-
-    animation:loading 2s linear infinite;
+    width:62%;
+    border-radius:50px;
+    background:linear-gradient(90deg,#ff6a00,#ffb300);
+    box-shadow:0 0 25px rgba(255,140,0,.6);
+    animation:progressGlow 2.5s ease infinite;
 }
 
-@keyframes loading{
+.percent{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+    background:#111;
+    color:#ff9d24;
+    border-radius:30px;
+    padding:4px 14px;
+    font-weight:700;
+    border:1px solid rgba(255,255,255,.1);
+}
 
-0%{
+@keyframes progressGlow{
+    0%{
+        box-shadow:0 0 15px rgba(255,120,0,.3);
+    }
+    50%{
+        box-shadow:0 0 35px rgba(255,120,0,.9);
+    }
+    100%{
+        box-shadow:0 0 15px rgba(255,120,0,.3);
+    }
+}
 
-transform:translateX(-120%);
+.note{
+    text-align:center;
+    color:#bdbdbd;
+    line-height:1.8;
+    margin-bottom:45px;
+}
+
+/* ==========================
+   INFO GRID
+========================== */
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+margin-bottom:35px;
 
 }
 
-100%{
+.box{
 
-transform:translateX(420%);
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+padding:28px;
+
+border-radius:22px;
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.box:hover{
+
+transform:translateY(-8px);
+
+border-color:#ff8d1b;
+
+box-shadow:0 12px 35px rgba(255,140,0,.18);
+
+}
+
+.box i{
+
+font-size:34px;
+
+color:#ff9326;
+
+margin-bottom:18px;
+
+}
+
+.box h4{
+
+margin-bottom:10px;
+
+font-size:18px;
+
+}
+
+.box p{
+
+color:#c9c9c9;
+
+line-height:1.6;
+
+}
+
+/* ==========================
+   SUPPORT SECTION
+========================== */
+
+.support{
+
+margin-top:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+padding:30px;
+
+border-radius:24px;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+.support>div{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.headset{
+
+font-size:42px;
+
+color:#ff9224;
+
+}
+
+.support h3{
+
+margin-bottom:8px;
+
+}
+
+.support p{
+
+color:#bfbfbf;
+
+}
+
+.btn{
+
+background:linear-gradient(135deg,#ff7b00,#ffa500);
+
+padding:16px 34px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+font-weight:700;
+
+color:white;
+
+transition:.35s;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(255,140,0,.45);
+
+}
+
+/* ==========================
+   FOOTER CARD
+========================== */
+
+.footer-card{
+
+margin-top:35px;
+
+display:flex;
+
+gap:20px;
+
+align-items:center;
+
+padding:28px;
+
+background:rgba(255,255,255,.04);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-card i{
+
+font-size:38px;
+
+color:#ff9524;
+
+}
+
+.footer-card h3{
+
+margin-bottom:8px;
+
+}
+
+.footer-card p{
+
+color:#bfbfbf;
+
+}
+
+.social{
+
+margin:45px 0 20px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+.social a{
+
+width:52px;
+
+height:52px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:#fff;
+
+font-size:18px;
+
+transition:.35s;
+
+text-decoration:none;
+
+}
+
+.social a:hover{
+
+background:#ff8b1f;
+
+transform:translateY(-5px);
+
+}
+
+.copyright{
+
+text-align:center;
+
+color:#999;
+
+font-size:15px;
+
+margin-top:10px;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.card h1{
+
+font-size:52px;
+
+}
+
+.info-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.support{
+
+flex-direction:column;
+
+align-items:flex-start;
 
 }
 
 }
 
-.small{
-
-    margin-top:30px;
-
-    color:#cfd8e3;
-
-    line-height:1.7;
-
-}
-
-footer{
-
-    margin-top:45px;
-
-    color:#90a4b8;
-
-    font-size:.9rem;
-
-}
-
-@media(max-width:768px){
+@media(max-width:600px){
 
 .card{
 
-padding:35px 28px;
+padding:28px;
 
 }
 
-h1{
+.card h1{
 
-font-size:2.2rem;
+font-size:40px;
 
 }
 
-.status-box{
+.description{
+
+font-size:16px;
+
+}
+
+.logo{
 
 flex-direction:column;
 
 }
 
+.logo-text{
+
+font-size:28px;
+
+text-align:center;
+
+}
+
+.btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+}
+
+/* Ripple Effect */
+
+.btn{
+    position:relative;
+    overflow:hidden;
+}
+
+@keyframes ripple{
+
+from{
+transform:translate(-50%,-50%) scale(0);
+opacity:1;
+}
+
+to{
+transform:translate(-50%,-50%) scale(35);
+opacity:0;
+}
+
 }
 </style>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="wrapper">
+
+<header>
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-sailboat"></i>
+</div>
+
+<div class="logo-text">
+<span>HarborView</span>
+<strong>Bank</strong>
+</div>
+
+</div>
+
+</header>
+
+<div class="card">
+
+<div class="badge">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+Scheduled Maintenance
+</div>
+
+<h1>
+We'll Be
+<span>Back Soon</span>
+</h1>
+
+<p class="description">
+
+Our online banking services are temporarily unavailable while we perform scheduled maintenance and improvements to deliver a better, faster and more secure banking experience.
+
+</p>
+
+<div class="progress-title">
+
+Maintenance in Progress
+
+</div>
+
+<div class="progress">
+
+<div class="progress-fill"></div>
+
+<div class="percent">
+
+62%
+
+</div>
+
+</div>
+
+<p class="note">
+
+Please do not refresh this page. You will automatically be redirected once the services are back online.
+
+</p>
+
+<div class="info-grid">
+
+<div class="box">
+
+<i class="fa-regular fa-calendar"></i>
+
+<h4>Status</h4>
+
+<p>Temporary Maintenance</p>
+
+</div>
+
+<div class="box">
+
+<i class="fa-regular fa-clock"></i>
+
+<h4>Estimated Restore</h4>
+
+<p>Today 11:30 PM</p>
+
+</div>
+
+<div class="box">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h4>Improvements</h4>
+
+<p>Security, Performance & Reliability</p>
+
+</div>
+
+</div>
+
+<div class="support">
+
+<div>
+
+<i class="fa-solid fa-headset headset"></i>
+
+<div>
+
+<h3>Need Immediate Assistance?</h3>
+
+<p>Our support team is available to help with urgent banking needs.</p>
+
+</div>
+
+</div>
+
+<a href="#" class="btn">
+
+Contact Support
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+<div class="footer-card">
+
+<i class="fa-solid fa-shield"></i>
+
+<div>
+
+<h3>
+
+Thank you for your patience and understanding.
+
+</h3>
+
+<p>
+
+We appreciate your trust in HarborView Bank.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+
+<a href="#"><i class="fab fa-x-twitter"></i></a>
+
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+<div class="copyright">
+
+© 2026 HarborView Bank. All Rights Reserved.
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+// ===============================
+// Animated Progress Bar
+// ===============================
+
+const progressBar = document.querySelector(".progress-fill");
+const percentLabel = document.querySelector(".percent");
+
+let progress = 0;
+const target = 62;
+
+const animateProgress = () => {
+    if (progress <= target) {
+        progressBar.style.width = progress + "%";
+        percentLabel.textContent = progress + "%";
+        progress++;
+        requestAnimationFrame(animateProgress);
+    }
+};
+
+window.addEventListener("load", () => {
+    setTimeout(animateProgress, 400);
+});
+
+
+// ===============================
+// Countdown Timer
+// ===============================
+
+// Set your maintenance end time here
+const restoreTime = new Date();
+restoreTime.setHours(23);
+restoreTime.setMinutes(30);
+restoreTime.setSeconds(0);
+
+const timer = document.createElement("p");
+timer.style.marginTop = "20px";
+timer.style.textAlign = "center";
+timer.style.color = "#ff9d24";
+timer.style.fontWeight = "600";
+timer.style.fontSize = "18px";
+
+document.querySelector(".note").after(timer);
+
+function updateCountdown(){
+
+    const now = new Date();
+
+    const distance = restoreTime - now;
+
+    if(distance <= 0){
+
+        timer.innerHTML = "Maintenance Completed";
+
+        return;
+
+    }
+
+    const hours = Math.floor(distance / (1000 * 60 * 60));
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    timer.innerHTML =
+    `Estimated Restore In: ${hours}h ${minutes}m ${seconds}s`;
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+// ===============================
+// Floating Glow Animation
+// ===============================
+
+document.querySelectorAll(".box").forEach(card=>{
+
+card.addEventListener("mousemove",(e)=>{
+
+const x=e.offsetX;
+const y=e.offsetY;
+
+card.style.background=
+`radial-gradient(circle at ${x}px ${y}px,
+rgba(255,145,0,.18),
+rgba(255,255,255,.05))`;
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.background="rgba(255,255,255,.04)";
+
+});
+
+});
+
+
+// ===============================
+// Button Ripple Effect
+// ===============================
+
+document.querySelector(".btn").addEventListener("click",function(e){
+
+e.preventDefault();
+
+const ripple=document.createElement("span");
+
+const x=e.offsetX;
+const y=e.offsetY;
+
+ripple.style.position="absolute";
+ripple.style.left=x+"px";
+ripple.style.top=y+"px";
+ripple.style.width="10px";
+ripple.style.height="10px";
+ripple.style.borderRadius="50%";
+ripple.style.background="rgba(255,255,255,.7)";
+ripple.style.transform="translate(-50%,-50%)";
+ripple.style.animation="ripple .6s linear";
+
+this.appendChild(ripple);
+
+setTimeout(()=>{
+
+ripple.remove();
+
+},600);
+
+});
+
+
+// ===============================
+// Fade-in Animation
+// ===============================
+
+document.querySelector(".card").animate([
+
+{
+opacity:0,
+transform:"translateY(40px)"
+},
+
+{
+opacity:1,
+transform:"translateY(0)"
+}
+
+],{
+
+duration:900,
+easing:"ease-out"
+
+});
+</script>
 
 </body>
 </html>
