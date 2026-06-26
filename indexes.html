@@ -889,34 +889,28 @@ timer.style.fontSize = "18px";
 
 document.querySelector(".note").after(timer);
 
-function updateCountdown(){
+function updateCountdown() {
 
     const now = new Date();
 
-    const distance = restoreTime - now;
+    let distance = restoreTime - now;
 
-    if(distance <= 0){
-
-        timer.innerHTML = "Maintenance Completed";
-
-        return;
-
+    // If the time has passed, move it to tomorrow
+    if (distance <= 0) {
+        restoreTime.setDate(restoreTime.getDate() + 1);
+        distance = restoreTime - now;
     }
 
     const hours = Math.floor(distance / (1000 * 60 * 60));
-
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     timer.innerHTML =
-    `Estimated Restore In: ${hours}h ${minutes}m ${seconds}s`;
-
+        `Estimated Restore In: ${hours}h ${minutes}m ${seconds}s`;
 }
 
 updateCountdown();
-
-setInterval(updateCountdown,1000);
+setInterval(updateCountdown, 1000);
 
 
 // ===============================
