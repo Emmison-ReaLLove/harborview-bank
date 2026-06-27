@@ -1,0 +1,292 @@
+/*====================================================
+    HARBORVIEW BANK PREMIUM UI
+    Version: 1.0
+=====================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+
+--primary:#ff7a18;
+--primary-light:#ffb347;
+--primary-dark:#e86400;
+
+--navy:#071321;
+--navy-light:#0d1c2f;
+
+--white:#ffffff;
+
+--glass:rgba(255,255,255,.08);
+--glass2:rgba(255,255,255,.12);
+
+--border:rgba(255,255,255,.18);
+
+--shadow:
+0 20px 60px rgba(0,0,0,.35);
+
+--radius:24px;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:
+
+radial-gradient(circle at top right,#ff7a1820,transparent 30%),
+
+radial-gradient(circle at bottom left,#ff7a1818,transparent 35%),
+
+linear-gradient(135deg,#071321,#102339,#071321);
+
+color:#fff;
+
+overflow-x:hidden;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+left:0;
+top:0;
+width:100%;
+height:100%;
+
+background:
+
+repeating-radial-gradient(circle,
+
+transparent 0,
+
+transparent 120px,
+
+rgba(255,255,255,.02) 121px,
+
+transparent 122px);
+
+animation:rotateBackground 80s linear infinite;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+@keyframes rotateBackground{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.main-menu__wrapper{
+
+background:rgba(12,20,30,.65)!important;
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+box-shadow:0 15px 45px rgba(0,0,0,.3);
+
+margin-top:12px;
+
+transition:.4s;
+
+}
+
+.stricky-header .main-menu__wrapper{
+
+margin-top:0;
+
+border-radius:0;
+
+}
+
+.main-menu__list li{
+
+margin:0 12px;
+
+}
+
+.main-menu__list li a{
+
+color:#fff!important;
+
+font-weight:600;
+
+letter-spacing:.3px;
+
+transition:.35s;
+
+}
+
+.main-menu__list li a:hover{
+
+color:#ff9828!important;
+
+}
+
+.inner-title{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.inner-title img{
+
+width:75px;
+
+height:75px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+padding:8px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 10px 30px rgba(255,120,0,.25);
+
+}
+
+.inner-title p{
+
+font-size:42px!important;
+
+font-weight:800!important;
+
+letter-spacing:2px;
+
+color:#ff8b1a!important;
+
+text-shadow:
+
+0 0 25px rgba(255,120,0,.25);
+
+}
+
+.main-slider{
+
+position:relative;
+
+}
+
+.image-layer::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:
+
+linear-gradient(
+
+rgba(5,10,18,.65),
+
+rgba(5,10,18,.45));
+
+}
+
+.main-slider-content{
+
+position:relative;
+
+z-index:5;
+
+}
+
+.big-title h2{
+
+font-size:72px;
+
+font-weight:800;
+
+line-height:1.1;
+
+text-shadow:0 8px 25px rgba(0,0,0,.45);
+
+}
+
+.main-slider-content .text{
+
+font-size:20px;
+
+color:#ededed;
+
+}
+
+.slider-buttom-box{
+
+display:flex;
+
+gap:18px;
+
+}
+
+.slider-buttom-box a{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:60px;
+
+padding:16px 34px;
+
+color:white;
+
+font-weight:700;
+
+transition:.35s;
+
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+}
+
+.slider-buttom-box a:hover{
+
+background:linear-gradient(135deg,#ff7a18,#ffb347);
+
+transform:translateY(-5px);
+
+box-shadow:0 20px 45px rgba(255,130,0,.35);
+
+}
