@@ -280,37 +280,205 @@ Invest with confidence while we help monitor your long-term growth.
 </div>
 
 </section>
-<section class="hvb-stock-form">
+<!-- ==========================================
+     Harborview Investment Consultation
+========================================== -->
 
-<div class="hvb-wrapper">
+<section class="hvb-invest-section">
 
-<div class="hvb-form-card">
+    <div class="hvb-wrapper">
 
-<div class="hvb-section-header">
+        <div class="hvb-invest-card">
 
-<span class="hvb-label">
-REQUEST A CALL
-</span>
+            <!-- Left Side -->
 
-<h2 class="hvb-title">
-Speak With a Stock Advisor
-</h2>
+            <div class="hvb-invest-info">
 
-<p>
-Fill in your information and a Harborview investment specialist will contact you shortly.
-</p>
+                <span class="hvb-label">
+                    STOCK INVESTMENT
+                </span>
 
-</div>
+                <h2>
+                    Speak With an
+                    Investment Advisor
+                </h2>
 
-<form class="default-form2">
+                <p>
 
-<!-- KEEP ALL OF YOUR EXISTING INPUTS HERE -->
+                    Our investment specialists are ready to help you build a diversified portfolio, maximize returns, and achieve your long-term financial goals.
 
-</form>
+                </p>
 
-</div>
+                <div class="hvb-benefits">
 
-</div>
+                    <div class="hvb-benefit">
+                        <i class="fas fa-check-circle"></i>
+                        Free Investment Consultation
+                    </div>
+
+                    <div class="hvb-benefit">
+                        <i class="fas fa-chart-line"></i>
+                        Portfolio Planning
+                    </div>
+
+                    <div class="hvb-benefit">
+                        <i class="fas fa-user-shield"></i>
+                        Licensed Financial Experts
+                    </div>
+
+                    <div class="hvb-benefit">
+                        <i class="fas fa-lock"></i>
+                        Secure & Confidential
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="hvb-form-panel">
+
+                <form name="apply_form" class="default-form2">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="hvb-input-group">
+
+                                <i class="fas fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    name="form_name"
+                                    id="formName"
+                                    placeholder="Full Name"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="hvb-input-group">
+
+                                <i class="fas fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    name="form_email"
+                                    id="formEmail"
+                                    placeholder="Email Address"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="hvb-input-group">
+
+                                <i class="fas fa-phone"></i>
+
+                                <input
+                                    type="text"
+                                    name="form_phone"
+                                    id="formPhone"
+                                    placeholder="Phone Number">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <select
+                                class="hvb-select"
+                                name="form_state">
+
+                                <option>Select State</option>
+
+                                <option>New York</option>
+
+                                <option>Florida</option>
+
+                                <option>California</option>
+
+                                <option>Georgia</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <select
+                                class="hvb-select"
+                                name="form_city">
+
+                                <option>Select City</option>
+
+                                <option>New York</option>
+
+                                <option>Miami</option>
+
+                                <option>Los Angeles</option>
+
+                                <option>Atlanta</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="hvb-input-group">
+
+                                <i class="fas fa-calendar"></i>
+
+                                <input
+                                    type="text"
+                                    id="datepicker"
+                                    name="date"
+                                    placeholder="Preferred Date">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <a href="success.html"
+                               class="hvb-submit-btn">
+
+                                Schedule Consultation
+
+                                <i class="fas fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <div class="hvb-security-note">
+
+                    <i class="fas fa-lock"></i>
+
+                    Your information is securely encrypted and never shared with third parties.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -766,6 +934,258 @@ transition:.3s;
 background:#E67E22;
 
 transform:translateY(-3px);
+
+}
+
+/*=====================================
+Investment Consultation
+=====================================*/
+
+.hvb-invest-section{
+
+background:#F8FAFC;
+
+padding:120px 20px;
+
+}
+
+.hvb-invest-card{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+background:#fff;
+
+border-radius:30px;
+
+padding:60px;
+
+box-shadow:0 25px 60px rgba(15,23,42,.08);
+
+border:1px solid #E5E7EB;
+
+}
+
+.hvb-invest-info h2{
+
+font-size:42px;
+
+font-weight:800;
+
+color:#16213E;
+
+margin:20px 0;
+
+line-height:1.2;
+
+}
+
+.hvb-invest-info p{
+
+font-size:17px;
+
+color:#64748B;
+
+line-height:1.9;
+
+margin-bottom:35px;
+
+}
+
+.hvb-benefit{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+margin-bottom:22px;
+
+font-weight:600;
+
+color:#334155;
+
+}
+
+.hvb-benefit i{
+
+color:#F7941D;
+
+font-size:20px;
+
+}
+
+.hvb-form-panel{
+
+background:#FAFBFC;
+
+padding:40px;
+
+border-radius:24px;
+
+}
+
+.hvb-input-group{
+
+display:flex;
+
+align-items:center;
+
+background:#fff;
+
+border:1px solid #E5E7EB;
+
+border-radius:16px;
+
+padding:0 18px;
+
+margin-bottom:22px;
+
+height:58px;
+
+transition:.3s;
+
+}
+
+.hvb-input-group:hover,
+
+.hvb-input-group:focus-within{
+
+border-color:#F7941D;
+
+box-shadow:0 0 0 4px rgba(247,148,29,.12);
+
+}
+
+.hvb-input-group i{
+
+color:#F7941D;
+
+margin-right:12px;
+
+}
+
+.hvb-input-group input{
+
+border:none;
+
+width:100%;
+
+outline:none;
+
+background:transparent;
+
+}
+
+.hvb-select{
+
+width:100%;
+
+height:58px;
+
+border-radius:16px;
+
+padding:0 18px;
+
+border:1px solid #E5E7EB;
+
+background:#fff;
+
+margin-bottom:22px;
+
+transition:.3s;
+
+}
+
+.hvb-select:focus{
+
+border-color:#F7941D;
+
+outline:none;
+
+box-shadow:0 0 0 4px rgba(247,148,29,.12);
+
+}
+
+.hvb-submit-btn{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+height:60px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#F7941D,#FFB347);
+
+color:#fff;
+
+font-weight:700;
+
+font-size:18px;
+
+text-decoration:none;
+
+transition:.35s;
+
+margin-top:10px;
+
+}
+
+.hvb-submit-btn:hover{
+
+transform:translateY(-4px);
+
+color:#fff;
+
+box-shadow:0 18px 35px rgba(247,148,29,.30);
+
+}
+
+.hvb-security-note{
+
+margin-top:25px;
+
+text-align:center;
+
+font-size:14px;
+
+color:#64748B;
+
+}
+
+.hvb-security-note i{
+
+color:#16A34A;
+
+margin-right:8px;
+
+}
+
+@media(max-width:991px){
+
+.hvb-invest-card{
+
+grid-template-columns:1fr;
+
+padding:35px;
+
+}
+
+.hvb-invest-info h2{
+
+font-size:34px;
+
+}
 
 }
             </style>
