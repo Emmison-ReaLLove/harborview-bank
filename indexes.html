@@ -755,6 +755,749 @@ font-size:15px;
 
 }
 
+/* =====================================
+   FLOATING AMBIENT LIGHT
+===================================== */
+
+.glow{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(140px);
+
+    opacity:.22;
+
+    pointer-events:none;
+
+    z-index:-3;
+
+}
+
+.glow1{
+
+    width:420px;
+    height:420px;
+
+    background:#ff7a1a;
+
+    top:-120px;
+    right:-80px;
+
+    animation:floatGlow1 14s ease-in-out infinite;
+
+}
+
+.glow2{
+
+    width:320px;
+    height:320px;
+
+    background:#ffb24d;
+
+    bottom:-80px;
+    left:-100px;
+
+    animation:floatGlow2 18s ease-in-out infinite;
+
+}
+
+.glow3{
+
+    width:250px;
+    height:250px;
+
+    background:#ff8f1f;
+
+    top:45%;
+    left:55%;
+
+    animation:floatGlow3 22s ease-in-out infinite;
+
+}
+
+@keyframes floatGlow1{
+
+0%,100%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(-60px,40px);
+
+}
+
+}
+
+@keyframes floatGlow2{
+
+0%,100%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(70px,-40px);
+
+}
+
+}
+
+@keyframes floatGlow3{
+
+0%,100%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(-40px,-60px);
+
+}
+
+}
+
+.logo{
+
+animation:logoFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+.glass-card::before{
+
+animation:glassReflection 10s linear infinite;
+
+}
+
+@keyframes glassReflection{
+
+0%{
+
+transform:translateX(-120%) rotate(22deg);
+
+}
+
+100%{
+
+transform:translateX(280%) rotate(22deg);
+
+}
+
+}
+
+@keyframes progressShine{
+
+0%{
+
+transform:translateX(-120%);
+
+}
+
+100%{
+
+transform:translateX(320%);
+
+}
+
+}
+
+.progress-fill{
+
+animation:progressPulse 3s ease-in-out infinite;
+
+}
+
+@keyframes progressPulse{
+
+0%,100%{
+
+box-shadow:0 0 18px rgba(255,122,26,.35);
+
+}
+
+50%{
+
+box-shadow:0 0 40px rgba(255,122,26,.75);
+
+}
+
+}
+
+.info-card{
+
+animation:cardFloat 8s ease-in-out infinite;
+
+}
+
+.info-card:nth-child(2){
+
+animation-delay:1.2s;
+
+}
+
+.info-card:nth-child(3){
+
+animation-delay:2.4s;
+
+}
+
+@keyframes cardFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-6px);
+
+}
+
+}
+
+.btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:60%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.35),
+
+transparent
+
+);
+
+transform:skewX(-20deg);
+
+animation:buttonShine 4s linear infinite;
+
+}
+
+@keyframes buttonShine{
+
+0%{
+
+left:-120%;
+
+}
+
+100%{
+
+left:180%;
+
+}
+
+}
+
+.social a{
+
+animation:socialFloat 5s ease-in-out infinite;
+
+}
+
+.social a:nth-child(2){
+
+animation-delay:.2s;
+
+}
+
+.social a:nth-child(3){
+
+animation-delay:.4s;
+
+}
+
+.social a:nth-child(4){
+
+animation-delay:.6s;
+
+}
+
+@keyframes socialFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-5px);
+
+}
+
+}
+
+header{
+
+animation:fadeDown .9s ease forwards;
+
+}
+
+.glass-card{
+
+animation:fadeUp 1s ease forwards;
+
+}
+
+footer{
+
+animation:fadeUp 1.2s ease forwards;
+
+}
+
+@keyframes fadeDown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===================================
+   TABLETS
+=================================== */
+
+@media (max-width:1024px){
+
+.wrapper{
+
+width:94%;
+
+padding:50px 0;
+
+}
+
+.glass-card{
+
+padding:55px;
+
+}
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:22px;
+
+}
+
+.support{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.btn{
+
+margin-top:10px;
+
+}
+
+}
+
+/* ===================================
+   SMALL TABLETS
+=================================== */
+
+@media (max-width:768px){
+
+header{
+
+margin-bottom:35px;
+
+}
+
+.logo{
+
+width:110px;
+
+}
+
+header h2{
+
+font-size:30px;
+
+}
+
+.glass-card{
+
+padding:40px 32px;
+
+border-radius:28px;
+
+}
+
+h1{
+
+font-size:3rem;
+
+}
+
+.glass-card p{
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.support{
+
+padding:28px;
+
+}
+
+.support-left{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+text-align:left;
+
+}
+
+.thank-you{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width:576px){
+
+.wrapper{
+
+width:94%;
+
+padding:35px 0;
+
+}
+
+.logo{
+
+width:90px;
+
+}
+
+header h2{
+
+font-size:26px;
+
+}
+
+.badge{
+
+font-size:13px;
+
+padding:10px 16px;
+
+}
+
+h1{
+
+font-size:2.4rem;
+
+}
+
+.glass-card{
+
+padding:28px 22px;
+
+border-radius:22px;
+
+}
+
+.glass-card p{
+
+font-size:15px;
+
+}
+
+.progress{
+
+height:14px;
+
+}
+
+.progress-text{
+
+font-size:11px;
+
+right:10px;
+
+}
+
+.info-card{
+
+padding:24px;
+
+}
+
+.info-card i{
+
+font-size:28px;
+
+}
+
+.info-card h3{
+
+font-size:18px;
+
+}
+
+.support{
+
+padding:24px;
+
+}
+
+.support-icon{
+
+width:58px;
+
+height:58px;
+
+font-size:22px;
+
+}
+
+.support h3{
+
+font-size:20px;
+
+}
+
+.btn{
+
+width:100%;
+
+justify-content:center;
+
+padding:16px;
+
+}
+
+.thank-you{
+
+padding:22px;
+
+}
+
+.social{
+
+gap:14px;
+
+flex-wrap:wrap;
+
+}
+
+.social a{
+
+width:48px;
+
+height:48px;
+
+}
+
+footer{
+
+margin-top:45px;
+
+}
+
+}
+
+@media (max-height:600px) and (orientation:landscape){
+
+.wrapper{
+
+padding:30px 0;
+
+}
+
+header{
+
+margin-bottom:20px;
+
+}
+
+.logo{
+
+width:75px;
+
+}
+
+.glass-card{
+
+padding:28px;
+
+}
+
+}
+
+@media (prefers-reduced-motion: reduce){
+
+*{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
+
+@media (min-width:1600px){
+
+.wrapper{
+
+max-width:1400px;
+
+}
+
+.glass-card{
+
+padding:90px;
+
+}
+
+}
+
+.particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-2;
+}
+
+.particle{
+    position:absolute;
+    bottom:-20px;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:rgba(255,180,77,.6);
+    animation:particleFloat linear infinite;
+}
+
+@keyframes particleFloat{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+.glass-card{
+    transform-style:preserve-3d;
+    transition:transform .2s ease-out;
+    will-change:transform;
+}
+
 
 </style>
 
@@ -974,7 +1717,255 @@ We appreciate your trust in HarborView Bank.
 
 </div>
 
-<script src="js/app.js"></script>
+<script>
+/* ==========================================
+   HarborView Bank Maintenance Page
+   app.js
+========================================== */
+
+/* -----------------------------
+   Animated Progress Bar
+----------------------------- */
+
+const progressFill = document.querySelector(".progress-fill");
+const progressText = document.querySelector(".progress-text");
+
+let current = 0;
+const target = 62;
+
+function animateProgress(){
+
+    if(current <= target){
+
+        progressFill.style.width = current + "%";
+        progressText.textContent = current + "%";
+
+        current++;
+
+        requestAnimationFrame(animateProgress);
+
+    }
+
+}
+
+window.addEventListener("load",()=>{
+
+    setTimeout(animateProgress,500);
+
+});
+
+/* -----------------------------
+   Countdown Timer
+----------------------------- */
+
+const countdown = document.getElementById("countdown");
+
+/*
+   Change this whenever you schedule maintenance.
+*/
+
+const restoreTime = new Date();
+
+restoreTime.setHours(23);
+restoreTime.setMinutes(30);
+restoreTime.setSeconds(0);
+
+function updateCountdown(){
+
+    const now = new Date();
+
+    let distance = restoreTime - now;
+
+    if(distance < 0){
+
+        restoreTime.setDate(restoreTime.getDate()+1);
+
+        distance = restoreTime - now;
+
+    }
+
+    const hours =
+        Math.floor(distance/(1000*60*60));
+
+    const minutes =
+        Math.floor((distance%(1000*60*60))/(1000*60));
+
+    const seconds =
+        Math.floor((distance%(1000*60))/1000);
+
+    countdown.innerHTML =
+        `Estimated Restore: <strong>${hours}h ${minutes}m ${seconds}s</strong>`;
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+/* -----------------------------
+   Mouse Parallax
+----------------------------- */
+
+const card = document.querySelector(".glass-card");
+
+document.addEventListener("mousemove",(e)=>{
+
+    const x = (window.innerWidth/2 - e.clientX)/35;
+    const y = (window.innerHeight/2 - e.clientY)/35;
+
+    card.style.transform =
+        `rotateY(${-x}deg) rotateX(${y}deg)`;
+
+});
+
+document.addEventListener("mouseleave",()=>{
+
+    card.style.transform =
+        "rotateX(0deg) rotateY(0deg)";
+
+});
+
+/* -----------------------------
+   Floating Particles
+----------------------------- */
+
+const particleContainer =
+document.querySelector(".particles");
+
+for(let i=0;i<25;i++){
+
+    const particle =
+    document.createElement("span");
+
+    particle.className="particle";
+
+    particle.style.left =
+        Math.random()*100+"%";
+
+    particle.style.animationDelay =
+        Math.random()*10+"s";
+
+    particle.style.animationDuration =
+        (8+Math.random()*10)+"s";
+
+    particle.style.opacity =
+        Math.random();
+
+    particleContainer.appendChild(particle);
+
+}
+
+/* -----------------------------
+   Auto Reconnect
+----------------------------- */
+
+/*
+Replace "/health"
+with your real endpoint.
+
+Example:
+
+https://harborviewbank.com/health
+
+or
+
+/status.json
+
+The endpoint should return:
+
+HTTP 200
+
+when the website is back online.
+*/
+
+async function checkServer(){
+
+    try{
+
+        const response = await fetch("/health",{
+
+            cache:"no-store"
+
+        });
+
+        if(response.ok){
+
+            window.location.href="/";
+
+        }
+
+    }
+
+    catch(e){
+
+        // Still under maintenance
+
+    }
+
+}
+
+/* check every 30 seconds */
+
+setInterval(checkServer,30000);
+
+/* -----------------------------
+   Ripple Effect
+----------------------------- */
+
+document.querySelectorAll(".btn").forEach(btn=>{
+
+btn.addEventListener("click",function(e){
+
+const ripple=document.createElement("span");
+
+const rect=this.getBoundingClientRect();
+
+ripple.style.position="absolute";
+
+ripple.style.left=(e.clientX-rect.left)+"px";
+
+ripple.style.top=(e.clientY-rect.top)+"px";
+
+ripple.style.width="10px";
+
+ripple.style.height="10px";
+
+ripple.style.borderRadius="50%";
+
+ripple.style.background="rgba(255,255,255,.45)";
+
+ripple.style.transform="translate(-50%,-50%)";
+
+ripple.style.animation="ripple .6s linear";
+
+this.appendChild(ripple);
+
+setTimeout(()=>{
+
+ripple.remove();
+
+},600);
+
+});
+
+});
+
+/* -----------------------------
+   Console Signature
+----------------------------- */
+
+console.log(
+"%cHarborView Bank",
+"color:#ff7a1a;font-size:20px;font-weight:bold;"
+);
+
+console.log(
+"%cMaintenance page loaded successfully.",
+"color:#ffffff;"
+);
+
+
+</script>
 
 </body>
 
