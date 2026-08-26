@@ -592,148 +592,136 @@
     }
 
 
-    /* ==========================================
-       KEYPAD
-       ========================================== */
+   /* ==========================================
+   VERIFICATION CARD
+   ========================================== */
 
-    #verificationCard .keypad {
+#verificationCard {
+  height: min(620px, calc(100dvh - 24px));
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   KEYPAD
+   ========================================== */
+
+#verificationCard .keypad {
+
+  /* Fill all remaining vertical space */
+  flex: 1;
+
   width: 100%;
-  max-width: 245px;
+  max-width: 280px;
 
-  margin-top: auto;
-  margin-bottom: 15px;
+  margin: 10px auto 12px;
 
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+
+  grid-template-rows: repeat(4, 1fr);
+
+  gap: 8px;
+
+  min-height: 0;
 }
 
+
+/* ==========================================
+   KEYPAD BUTTONS
+   ========================================== */
+
+#verificationCard .key {
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  border-radius: 12px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.14);
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color: #fff;
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease,
+    border-color 0.15s ease;
+}
+
+
+#verificationCard .key:hover {
+
+  background:
+    rgba(255,255,255,0.16);
+
+  border-color:
+    rgba(255,255,255,0.3);
+}
+
+
+#verificationCard .key:active {
+
+  transform:
+    scale(0.97);
+
+  background:
+    rgba(255,255,255,0.22);
+}
+
+
+/* ==========================================
+   BACK BUTTON
+   ========================================== */
 
 #verificationCard .secondary-btn {
-  margin-top: 0;
-  margin-bottom: 5px;
+
   flex-shrink: 0;
+
+  width: 100%;
+
+  padding: 11px;
+
+  margin: 0 0 5px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.25);
+
+  border-radius: 25px;
+
+  background:
+    transparent;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  font-size: 13px;
 }
-
-    .key {
-
-      width:
-        100%;
-
-      height:
-        48px;
-
-      border:
-        1px solid rgba(255, 255, 255, 0.14);
-
-      border-radius:
-        50%;
-
-      background:
-        rgba(255, 255, 255, 0.08);
-
-      color:
-        #fff;
-
-      font-size:
-        18px;
-
-      font-weight:
-        500;
-
-      cursor:
-        pointer;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      transition:
-        background 0.15s ease,
-        transform 0.1s ease,
-        border-color 0.15s ease;
-    }
-
-
-    .key:hover {
-
-      background:
-        rgba(255, 255, 255, 0.16);
-
-      border-color:
-        rgba(255, 255, 255, 0.3);
-    }
-
-
-    .key:active {
-
-      transform:
-        scale(0.91);
-
-      background:
-        rgba(255, 255, 255, 0.22);
-    }
-
-
-    .action-key {
-
-      font-size:
-        15px;
-
-      color:
-        #ddd;
-    }
-
-
-    /* ==========================================
-       BACK BUTTON
-       ========================================== */
-
-    .secondary-btn {
-
-      width:
-        100%;
-
-      padding:
-        10px;
-
-      margin-top:
-        5px;
-
-      border:
-        1px solid rgba(255, 255, 255, 0.25);
-
-      border-radius:
-        25px;
-
-      background:
-        transparent;
-
-      color:
-        #fff;
-
-      cursor:
-        pointer;
-
-      font-size:
-        13px;
-
-      transition:
-        0.3s ease;
-    }
-
-
-    .secondary-btn:hover {
-
-      background:
-        rgba(255, 255, 255, 0.08);
-    }
-
 
     /* ==========================================
        MOBILE
