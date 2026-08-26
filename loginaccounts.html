@@ -201,9 +201,14 @@
     }
 
     #verificationCard {
-  height: min(600px, calc(100dvh - 24px));
-    }  
+  height: min(620px, calc(100dvh - 24px));
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+}
     /* ==========================================
        LOGO
        ========================================== */
@@ -591,27 +596,24 @@
        KEYPAD
        ========================================== */
 
-    .keypad {
+    #verificationCard .keypad {
+  width: 100%;
+  max-width: 245px;
 
-      display:
-        grid;
+  margin-top: auto;
+  margin-bottom: 15px;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
 
-      gap:
-        8px;
 
-      width:
-        100%;
-
-      max-width:
-        245px;
-
-      margin:
-        8px auto 12px;
-    }
-
+#verificationCard .secondary-btn {
+  margin-top: 0;
+  margin-bottom: 5px;
+  flex-shrink: 0;
+}
 
     .key {
 
